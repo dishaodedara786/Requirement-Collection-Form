@@ -1,0 +1,1794 @@
+<!-- <!DOCTYPE html>
+<html>
+<head>
+  <title>Project Requirement Form</title>
+  <link rel="stylesheet" href="style.css">
+</head>
+<body>
+
+<form action="/submit" method="POST"> -->
+
+<!-- ================= SECTION 1 ================= -->
+
+<!-- <h2>Section 1: Project Classification</h2>
+
+<label>Primary Industry</label>
+<select id="industrySelect" name="industry" required>
+  <option value="">Select</option>
+  <option value="ecommerce">E-commerce</option>
+  <option value="healthcare">Healthcare</option>
+  <option value="education">Education</option>
+  <option value="proptech">PropTech</option>
+</select>
+
+<label>Project Type</label>
+<select name="project_type">
+  <option>New Platform</option>
+  <option>MVP</option>
+  <option>Enhancement</option>
+</select>
+
+<hr> -->
+
+<!-- ================= ECOMMERCE ================= -->
+
+<!-- <div id="ecommerceSection" class="hidden">
+
+<h2>E-commerce Questions</h2>
+
+<label>E-commerce Model</label>
+<select name="ecommerce_model">
+  <option>Basic Store</option>
+  <option>Marketplace</option>
+  <option>Subscription</option>
+</select>
+
+<label>Expected Products</label>
+<select name="product_count">
+  <option value="lt100">&lt; 100</option>
+  <option value="100-1000">100-1000</option>
+  <option value="1000+">1000+</option>
+</select>
+
+<label>Payment Methods</label>
+<input type="checkbox" name="payments[]" value="card"> Card  
+<input type="checkbox" name="payments[]" value="wallet"> Wallet  
+<input type="checkbox" name="payments[]" value="cod"> COD  
+
+</div> -->
+
+<!-- ================= HEALTHCARE ================= -->
+
+<!-- <div id="healthcareSection" class="hidden">
+
+<h2>Healthcare Questions</h2>
+
+<label>Healthcare App Type</label>
+<select name="healthcare_type">
+  <option>Patient Portal</option>
+  <option>Telemedicine</option>
+  <option>EHR System</option>
+</select>
+
+<label>Handle PHI?</label>
+<select name="phi">
+  <option>Yes</option>
+  <option>No</option>
+</select>
+
+</div> -->
+
+<!-- ================= EDUCATION ================= -->
+
+<!-- <div id="educationSection" class="hidden">
+
+<h2>Education (LMS) Questions</h2>
+
+<label>LMS Type</label>
+<select name="lms_type">
+  <option>University</option>
+  <option>Corporate Training</option>
+  <option>Online Courses</option>
+</select>
+
+<label>Expected Students</label>
+<select name="students">
+  <option value="lt100">&lt; 100</option>
+  <option value="100-1000">100-1000</option>
+  <option value="1000+">1000+</option>
+</select>
+
+</div> -->
+
+<!-- ================= PROPTECH ================= -->
+
+<!-- <div id="proptechSection" class="hidden">
+
+<h2>PropTech Questions</h2>
+
+<label>Platform Type</label>
+<select name="proptech_type">
+  <option>Listings Portal</option>
+  <option>Property Management</option>
+  <option>Investment Platform</option>
+</select>
+
+</div>
+
+<br>
+
+<button type="submit">Submit</button>
+
+</form>
+
+<script src="script.js"></script>
+</body>
+</html> -->
+
+
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Project Requirements Form</title>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Syne:wght@400;500;600;700;800&family=DM+Sans:ital,opsz,wght@0,9..40,300;0,9..40,400;0,9..40,500&display=swap" rel="stylesheet">
+<style>
+:root {
+  --bg: #0d0f14;
+  --surface: #13161e;
+  --surface2: #1a1e29;
+  --border: #252a38;
+  --border-light: #2e3548;
+  --accent: #5b6ef5;
+  --accent2: #7c8ff7;
+  --accent-glow: rgba(91,110,245,0.15);
+  --text: #e8eaf0;
+  --text-muted: #7a8099;
+  --text-dim: #4a5068;
+  --success: #3dd68c;
+  --radius: 10px;
+  --radius-sm: 6px;
+}
+*,*::before,*::after{box-sizing:border-box;margin:0;padding:0}
+body{font-family:'DM Sans',sans-serif;background:var(--bg);color:var(--text);min-height:100vh;overflow-x:hidden}
+body::before{content:'';position:fixed;top:-200px;left:-200px;width:600px;height:600px;background:radial-gradient(circle,rgba(91,110,245,0.07) 0%,transparent 70%);pointer-events:none;z-index:0}
+.form-wrapper{max-width:860px;margin:0 auto;padding:48px 24px 80px;position:relative;z-index:1}
+.form-header{margin-bottom:48px;padding-bottom:32px;border-bottom:1px solid var(--border)}
+.form-header .tag{display:inline-flex;align-items:center;gap:6px;background:var(--accent-glow);border:1px solid rgba(91,110,245,0.3);color:var(--accent2);font-size:11px;font-weight:600;letter-spacing:.12em;text-transform:uppercase;padding:5px 12px;border-radius:100px;margin-bottom:20px}
+.form-header h1{font-family:'Syne',sans-serif;font-size:clamp(28px,5vw,42px);font-weight:800;line-height:1.15;letter-spacing:-.02em;color:#fff;margin-bottom:12px}
+.form-header h1 span{color:var(--accent2)}
+.form-header p{font-size:15px;color:var(--text-muted);line-height:1.6;max-width:520px}
+.progress-bar-wrap{margin-bottom:28px;display:flex;align-items:center;gap:12px}
+.progress-label{font-size:12px;color:var(--text-dim);white-space:nowrap}
+.progress-track{flex:1;height:3px;background:var(--border);border-radius:2px;overflow:hidden}
+.progress-fill{height:100%;background:linear-gradient(90deg,var(--accent),var(--accent2));width:0%;transition:width .5s cubic-bezier(.4,0,.2,1);border-radius:2px}
+.section{margin-bottom:10px;border:1px solid var(--border);border-radius:var(--radius);overflow:hidden;background:var(--surface);transition:border-color .2s;animation:fadeIn .3s ease both}
+.section:hover{border-color:var(--border-light)}
+.section.active-ind{border-color:rgba(91,110,245,.35)}
+.section-header{display:flex;align-items:center;gap:14px;padding:18px 22px;cursor:pointer;user-select:none;transition:background .15s}
+.section-header:hover{background:var(--surface2)}
+.section-num{width:28px;height:28px;border-radius:50%;background:var(--surface2);border:1px solid var(--border-light);display:flex;align-items:center;justify-content:center;font-family:'Syne',sans-serif;font-size:11px;font-weight:700;color:var(--text-muted);flex-shrink:0;transition:all .2s}
+.section.active-ind .section-num{background:var(--accent);border-color:var(--accent);color:#fff}
+.section-title-wrap{flex:1}
+.section-title{font-family:'Syne',sans-serif;font-size:14px;font-weight:700;color:var(--text);letter-spacing:.01em}
+.section-subtitle{font-size:12px;color:var(--text-dim);margin-top:2px}
+.section-arrow{color:var(--text-dim);transition:transform .25s;font-size:18px;line-height:1}
+.section.open .section-arrow{transform:rotate(180deg)}
+.section-body{padding:0;max-height:0;overflow:hidden;transition:max-height .4s cubic-bezier(.4,0,.2,1)}
+.section.open .section-body{max-height:9999px;padding:4px 22px 28px}
+.field-group{margin-bottom:24px}
+.field-group:last-child{margin-bottom:0}
+.field-group+.field-group{padding-top:22px;border-top:1px solid var(--border)}
+.field-label{display:flex;align-items:baseline;gap:6px;margin-bottom:10px}
+.field-label span{font-family:'Syne',sans-serif;font-size:13px;font-weight:600;color:var(--text);letter-spacing:.01em}
+.field-label .req{color:var(--accent);font-size:12px}
+.field-hint{font-size:12px;color:var(--text-dim);margin-bottom:10px;line-height:1.5}
+select,input[type="text"],textarea{width:100%;background:var(--surface2);border:1px solid var(--border-light);border-radius:var(--radius-sm);color:var(--text);font-family:'DM Sans',sans-serif;font-size:14px;padding:10px 14px;outline:none;transition:border-color .2s,box-shadow .2s;-webkit-appearance:none;appearance:none}
+select{background-image:url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='12' height='8' viewBox='0 0 12 8'%3E%3Cpath d='M1 1l5 5 5-5' stroke='%237a8099' stroke-width='1.5' fill='none' stroke-linecap='round' stroke-linejoin='round'/%3E%3C/svg%3E");background-repeat:no-repeat;background-position:right 12px center;padding-right:36px;cursor:pointer}
+select option{background:#1a1e29}
+select:focus,input[type="text"]:focus,textarea:focus{border-color:var(--accent);box-shadow:0 0 0 3px var(--accent-glow)}
+textarea{resize:vertical;min-height:90px;line-height:1.6}
+.option-grid{display:grid;grid-template-columns:repeat(auto-fill,minmax(220px,1fr));gap:8px}
+.option-grid.cols-2{grid-template-columns:repeat(auto-fill,minmax(280px,1fr))}
+.option-grid.cols-1{grid-template-columns:1fr}
+.opt-item{display:flex;align-items:flex-start;gap:10px;padding:10px 12px;border:1px solid var(--border);border-radius:var(--radius-sm);cursor:pointer;transition:border-color .15s,background .15s;line-height:1.4}
+.opt-item:hover{border-color:var(--border-light);background:rgba(255,255,255,.02)}
+.opt-item input[type="radio"],.opt-item input[type="checkbox"]{width:auto;margin:0;flex-shrink:0;margin-top:2px;accent-color:var(--accent);cursor:pointer}
+.opt-item label{font-size:13px;color:var(--text-muted);cursor:pointer;flex:1}
+.opt-item:has(input:checked){border-color:rgba(91,110,245,.5);background:var(--accent-glow)}
+.opt-item:has(input:checked) label{color:var(--text)}
+.two-col{display:grid;grid-template-columns:1fr 1fr;gap:16px}
+.three-col{display:grid;grid-template-columns:1fr 1fr 1fr;gap:16px}
+@media(max-width:600px){.two-col,.three-col{grid-template-columns:1fr}.option-grid{grid-template-columns:1fr}}
+.industry-section{display:none}
+.industry-section.visible{display:block}
+.subsection-heading{font-family:'Syne',sans-serif;font-size:12px;font-weight:700;letter-spacing:.1em;text-transform:uppercase;color:var(--accent2);margin-bottom:14px;margin-top:4px;display:flex;align-items:center;gap:8px}
+.subsection-heading::after{content:'';flex:1;height:1px;background:var(--border)}
+.other-input{display:none;margin-top:8px}
+.other-input.show{display:block}
+.submit-area{margin-top:36px;padding:28px;background:var(--surface);border:1px solid var(--border);border-radius:var(--radius)}
+.submit-info{font-size:13px;color:var(--text-dim);margin-bottom:16px;line-height:1.6}
+.btn-submit{width:100%;padding:15px;background:var(--accent);color:#fff;border:none;border-radius:var(--radius-sm);font-family:'Syne',sans-serif;font-size:15px;font-weight:700;letter-spacing:.04em;cursor:pointer;transition:background .2s,transform .1s,box-shadow .2s;box-shadow:0 4px 24px rgba(91,110,245,.25)}
+.btn-submit:hover{background:var(--accent2);box-shadow:0 6px 32px rgba(91,110,245,.4)}
+.btn-submit:active{transform:translateY(1px)}
+::-webkit-scrollbar{width:6px}
+::-webkit-scrollbar-track{background:var(--bg)}
+::-webkit-scrollbar-thumb{background:var(--border-light);border-radius:3px}
+@keyframes fadeIn{from{opacity:0;transform:translateY(10px)}to{opacity:1;transform:translateY(0)}}
+.section:nth-child(1){animation-delay:.05s}
+.section:nth-child(2){animation-delay:.1s}
+.section:nth-child(3){animation-delay:.15s}
+</style>
+</head>
+<body>
+<div class="form-wrapper">
+  <div class="form-header">
+    <div class="tag"><svg width="8" height="8" viewBox="0 0 8 8" fill="currentColor"><circle cx="4" cy="4" r="4"/></svg> New Project Brief</div>
+    <h1>Tell us about your<br><span>Project Requirements</span></h1>
+    <p>Fill in the sections below. Industry-specific questions will appear based on your selection in Section 1.</p>
+  </div>
+  <div class="progress-bar-wrap">
+    <span class="progress-label" id="progressLabel">0% complete</span>
+    <div class="progress-track"><div class="progress-fill" id="progressFill"></div></div>
+  </div>
+<form id="mainForm" action="/submit" method="POST">
+
+<!-- ===== SECTION 1: CLASSIFICATION ===== -->
+<div class="section open active-ind" id="sec1">
+  <div class="section-header" onclick="toggleSection('sec1')">
+    <div class="section-num">1</div>
+    <div class="section-title-wrap">
+      <div class="section-title">Project Classification & Industry</div>
+      <div class="section-subtitle">Industry, project type, platform, and scope</div>
+    </div>
+    <span class="section-arrow">▾</span>
+  </div>
+  <div class="section-body">
+
+    <div class="field-group">
+      <div class="field-label"><span>1.1 Primary Industry</span><span class="req">*</span></div>
+      <select id="industrySelect" name="industry" required onchange="handleIndustryChange(this.value)">
+        <option value="">— Select your industry —</option>
+        <optgroup label="Healthcare">
+          <option value="healthcare">Healthcare (Medical/Clinical)</option>
+          <option value="healthcare">Healthcare (Wellness/Fitness)</option>
+          <option value="healthcare">Healthcare (Telemedicine/Virtual Care)</option>
+        </optgroup>
+        <optgroup label="Education">
+          <option value="education">Education (Universities/Higher Education)</option>
+          <option value="education">Education (K-12/Schools)</option>
+          <option value="education">Education (Corporate Training/LMS)</option>
+          <option value="education">Education (Online Course Marketplace)</option>
+        </optgroup>
+        <optgroup label="E-commerce">
+          <option value="ecommerce">E-commerce (B2C Retail)</option>
+          <option value="ecommerce">E-commerce (B2B Wholesale)</option>
+          <option value="ecommerce">E-commerce (Marketplace/Multi-vendor)</option>
+          <option value="ecommerce">E-commerce (Subscription/Recurring)</option>
+          <option value="ecommerce">E-commerce (Dropshipping)</option>
+        </optgroup>
+        <optgroup label="PropTech">
+          <option value="proptech">PropTech (Real Estate Listings/Portal)</option>
+          <option value="proptech">PropTech (Property Management)</option>
+          <option value="proptech">PropTech (Real Estate Investment/Crowdfunding)</option>
+          <option value="proptech">PropTech (Vacation Rentals)</option>
+        </optgroup>
+        <optgroup label="FinTech">
+          <option value="fintech">FinTech (Digital Banking/Neobank)</option>
+          <option value="fintech">FinTech (Payment Processing/Gateway)</option>
+          <option value="fintech">FinTech (Lending/Credit Platform)</option>
+          <option value="fintech">FinTech (Investment/Trading Platform)</option>
+          <option value="fintech">FinTech (Insurance Tech)</option>
+          <option value="fintech">FinTech (Personal Finance Management)</option>
+          <option value="fintech">FinTech (Cryptocurrency/Blockchain)</option>
+        </optgroup>
+        <optgroup label="Other">
+          <option value="saas">SaaS (Business/Enterprise Tools)</option>
+          <option value="saas">SaaS (Consumer Applications)</option>
+          <option value="other">Media &amp; Publishing</option>
+          <option value="other">Travel &amp; Hospitality</option>
+          <option value="other">Food &amp; Beverage</option>
+          <option value="other">Non-profit/NGO</option>
+          <option value="other">Government/Public Sector</option>
+          <option value="other">Other</option>
+        </optgroup>
+      </select>
+    </div>
+
+    <div class="field-group">
+      <div class="field-label"><span>1.2 Project Type</span><span class="req">*</span></div>
+      <div class="option-grid">
+        <label class="opt-item"><input type="radio" name="project_type" value="new_platform"><label>New platform from scratch</label></label>
+        <label class="opt-item"><input type="radio" name="project_type" value="major_enhancement"><label>Major enhancement to existing</label></label>
+        <label class="opt-item"><input type="radio" name="project_type" value="minor_enhancement"><label>Minor enhancement/feature add</label></label>
+        <label class="opt-item"><input type="radio" name="project_type" value="migration"><label>Migration/Re-platforming</label></label>
+        <label class="opt-item"><input type="radio" name="project_type" value="redesign"><label>Redesign/Revamp (UI/UX)</label></label>
+        <label class="opt-item"><input type="radio" name="project_type" value="integration"><label>Integration project</label></label>
+        <label class="opt-item"><input type="radio" name="project_type" value="maintenance"><label>Maintenance &amp; support only</label></label>
+        <label class="opt-item"><input type="radio" name="project_type" value="mvp"><label>MVP/Proof of Concept</label></label>
+        <label class="opt-item"><input type="radio" name="project_type" value="phase2"><label>Phase 2/3 of existing project</label></label>
+        <label class="opt-item"><input type="radio" name="project_type" value="clone"><label>Clone/replica of existing platform</label></label>
+        <label class="opt-item"><input type="radio" name="project_type" value="module"><label>Custom module/plugin development</label></label>
+      </div>
+    </div>
+
+    <div class="field-group">
+      <div class="field-label"><span>1.3 Platform Type</span><span class="req">*</span></div>
+      <div class="field-hint">Select all that apply</div>
+      <div class="option-grid">
+        <label class="opt-item"><input type="checkbox" name="platforms[]" value="web"><label>Web Application (Responsive)</label></label>
+        <label class="opt-item"><input type="checkbox" name="platforms[]" value="ios"><label>Native Mobile App (iOS)</label></label>
+        <label class="opt-item"><input type="checkbox" name="platforms[]" value="android"><label>Native Mobile App (Android)</label></label>
+        <label class="opt-item"><input type="checkbox" name="platforms[]" value="both_native"><label>Native Mobile Apps (iOS &amp; Android)</label></label>
+        <label class="opt-item"><input type="checkbox" name="platforms[]" value="crossplatform"><label>Cross-platform (React Native/Flutter)</label></label>
+        <label class="opt-item"><input type="checkbox" name="platforms[]" value="desktop_win"><label>Desktop App (Windows)</label></label>
+        <label class="opt-item"><input type="checkbox" name="platforms[]" value="desktop_mac"><label>Desktop App (macOS)</label></label>
+        <label class="opt-item"><input type="checkbox" name="platforms[]" value="pwa"><label>Progressive Web App (PWA)</label></label>
+        <label class="opt-item"><input type="checkbox" name="platforms[]" value="hybrid"><label>Hybrid Solution (Web + Mobile)</label></label>
+        <label class="opt-item"><input type="checkbox" name="platforms[]" value="api_only"><label>API/Backend Services only</label></label>
+        <label class="opt-item"><input type="checkbox" name="platforms[]" value="cms"><label>CMS-based Website</label></label>
+        <label class="opt-item"><input type="checkbox" name="platforms[]" value="ecom_platform"><label>E-commerce Platform (Shopify/WooCommerce)</label></label>
+        <label class="opt-item"><input type="checkbox" name="platforms[]" value="custom_web"><label>Custom Website (Laravel/Node.js)</label></label>
+        <label class="opt-item"><input type="checkbox" name="platforms[]" value="chrome_ext"><label>Chrome Extension/Browser Plugin</label></label>
+      </div>
+    </div>
+
+    <div class="field-group">
+      <div class="field-label"><span>1.4 Project Scope</span><span class="req">*</span></div>
+      <div class="option-grid">
+        <label class="opt-item"><input type="radio" name="scope" value="end_to_end"><label>Complete end-to-end solution</label></label>
+        <label class="opt-item"><input type="radio" name="scope" value="frontend_only"><label>Frontend only (UI/UX development)</label></label>
+        <label class="opt-item"><input type="radio" name="scope" value="backend_only"><label>Backend only (API/Database)</label></label>
+        <label class="opt-item"><input type="radio" name="scope" value="design_only"><label>Design only (no development)</label></label>
+        <label class="opt-item"><input type="radio" name="scope" value="consulting"><label>Consulting/Advisory only</label></label>
+        <label class="opt-item"><input type="radio" name="scope" value="not_sure"><label>Not sure — need help defining scope</label></label>
+      </div>
+    </div>
+
+  </div>
+</div>
+
+<!-- ===== SECTION 2: BUSINESS ===== -->
+<div class="section" id="sec2">
+  <div class="section-header" onclick="toggleSection('sec2')">
+    <div class="section-num">2</div>
+    <div class="section-title-wrap">
+      <div class="section-title">Business Requirements</div>
+      <div class="section-subtitle">Business model, user roles, scale &amp; geography</div>
+    </div>
+    <span class="section-arrow">▾</span>
+  </div>
+  <div class="section-body">
+
+    <div class="field-group">
+      <div class="field-label"><span>2.1 Business Model</span><span class="req">*</span></div>
+      <div class="option-grid">
+        <label class="opt-item"><input type="checkbox" name="biz_model[]" value="b2c"><label>B2C (Business to Consumer)</label></label>
+        <label class="opt-item"><input type="checkbox" name="biz_model[]" value="b2b"><label>B2B (Business to Business)</label></label>
+        <label class="opt-item"><input type="checkbox" name="biz_model[]" value="b2b2c"><label>B2B2C</label></label>
+        <label class="opt-item"><input type="checkbox" name="biz_model[]" value="c2c"><label>C2C (like eBay)</label></label>
+        <label class="opt-item"><input type="checkbox" name="biz_model[]" value="marketplace"><label>Marketplace</label></label>
+        <label class="opt-item"><input type="checkbox" name="biz_model[]" value="subscription"><label>Subscription-based</label></label>
+        <label class="opt-item"><input type="checkbox" name="biz_model[]" value="freemium"><label>Freemium</label></label>
+        <label class="opt-item"><input type="checkbox" name="biz_model[]" value="commission"><label>Transaction fee/Commission</label></label>
+        <label class="opt-item"><input type="checkbox" name="biz_model[]" value="advertising"><label>Advertising-based</label></label>
+        <label class="opt-item"><input type="checkbox" name="biz_model[]" value="licensing"><label>Licensing/White-label</label></label>
+        <label class="opt-item"><input type="checkbox" name="biz_model[]" value="internal"><label>Non-commercial/Internal use</label></label>
+      </div>
+    </div>
+
+    <div class="field-group">
+      <div class="field-label"><span>2.2 User Roles &amp; Access</span><span class="req">*</span></div>
+      <div class="option-grid">
+        <label class="opt-item"><input type="checkbox" name="user_roles[]" value="end_users"><label>End Users/Customers</label></label>
+        <label class="opt-item"><input type="checkbox" name="user_roles[]" value="members"><label>Registered Members/Subscribers</label></label>
+        <label class="opt-item"><input type="checkbox" name="user_roles[]" value="vendors"><label>Vendors/Sellers/Service Providers</label></label>
+        <label class="opt-item"><input type="checkbox" name="user_roles[]" value="biz_clients"><label>Business Clients/Corporate Users</label></label>
+        <label class="opt-item"><input type="checkbox" name="user_roles[]" value="admins"><label>Administrators/Super Admin</label></label>
+        <label class="opt-item"><input type="checkbox" name="user_roles[]" value="content_mgrs"><label>Content Managers/Editors</label></label>
+        <label class="opt-item"><input type="checkbox" name="user_roles[]" value="support"><label>Support Staff/Customer Service</label></label>
+        <label class="opt-item"><input type="checkbox" name="user_roles[]" value="analytics"><label>Analytics/Reporting Users</label></label>
+        <label class="opt-item"><input type="checkbox" name="user_roles[]" value="api_consumers"><label>API Consumers/Developers</label></label>
+        <label class="opt-item"><input type="checkbox" name="user_roles[]" value="public"><label>Public/Anonymous Visitors</label></label>
+      </div>
+    </div>
+
+    <div class="field-group">
+      <div class="field-label"><span>2.3 Scale &amp; Volume</span><span class="req">*</span></div>
+      <div class="two-col">
+        <div>
+          <div class="field-hint">Expected users</div>
+          <div class="option-grid cols-1">
+            <label class="opt-item"><input type="radio" name="user_count" value="lt100"><label>&lt; 100</label></label>
+            <label class="opt-item"><input type="radio" name="user_count" value="100_1k"><label>100 – 1,000</label></label>
+            <label class="opt-item"><input type="radio" name="user_count" value="1k_10k"><label>1,000 – 10,000</label></label>
+            <label class="opt-item"><input type="radio" name="user_count" value="10k_100k"><label>10,000 – 100,000</label></label>
+            <label class="opt-item"><input type="radio" name="user_count" value="100k_1m"><label>100,000 – 1 million</label></label>
+            <label class="opt-item"><input type="radio" name="user_count" value="1m_plus"><label>1 million+</label></label>
+            <label class="opt-item"><input type="radio" name="user_count" value="unlimited"><label>Public (unlimited)</label></label>
+            <label class="opt-item"><input type="radio" name="user_count" value="not_sure"><label>Not sure/TBD</label></label>
+          </div>
+        </div>
+        <div>
+          <div class="field-hint">Daily traffic</div>
+          <div class="option-grid cols-1">
+            <label class="opt-item"><input type="radio" name="daily_traffic" value="low"><label>Low (&lt;1,000/day)</label></label>
+            <label class="opt-item"><input type="radio" name="daily_traffic" value="medium"><label>Medium (1K–10K/day)</label></label>
+            <label class="opt-item"><input type="radio" name="daily_traffic" value="high"><label>High (10K–100K/day)</label></label>
+            <label class="opt-item"><input type="radio" name="daily_traffic" value="very_high"><label>Very High (100K+/day)</label></label>
+            <label class="opt-item"><input type="radio" name="daily_traffic" value="internal"><label>Internal use only</label></label>
+            <label class="opt-item"><input type="radio" name="daily_traffic" value="not_sure"><label>Not sure</label></label>
+          </div>
+        </div>
+      </div>
+      <div class="field-hint" style="margin-top:14px">Data/content volume</div>
+      <div class="option-grid">
+        <label class="opt-item"><input type="radio" name="data_volume" value="small"><label>Small (&lt;1K records)</label></label>
+        <label class="opt-item"><input type="radio" name="data_volume" value="medium"><label>Medium (1K–50K)</label></label>
+        <label class="opt-item"><input type="radio" name="data_volume" value="large"><label>Large (50K–1M)</label></label>
+        <label class="opt-item"><input type="radio" name="data_volume" value="very_large"><label>Very Large (1M+)</label></label>
+        <label class="opt-item"><input type="radio" name="data_volume" value="not_sure"><label>Not sure</label></label>
+      </div>
+    </div>
+
+    <div class="field-group">
+      <div class="field-label"><span>2.4 Geographic Scope</span><span class="req">*</span></div>
+      <div class="option-grid" style="margin-bottom:10px">
+        <label class="opt-item"><input type="radio" name="geo_scope" value="single_city"><label>Single city/region</label></label>
+        <label class="opt-item"><input type="radio" name="geo_scope" value="single_country"><label>Single country</label></label>
+        <label class="opt-item"><input type="radio" name="geo_scope" value="multi_country"><label>Multiple countries</label></label>
+        <label class="opt-item"><input type="radio" name="geo_scope" value="global"><label>Global – Worldwide</label></label>
+      </div>
+      <input type="text" name="geo_country" placeholder="If single country, specify (e.g. India, USA, UK)…">
+      <div class="field-hint" style="margin-top:14px">Languages</div>
+      <div class="option-grid">
+        <label class="opt-item"><input type="checkbox" name="languages[]" value="english"><label>English only</label></label>
+        <label class="opt-item"><input type="checkbox" name="languages[]" value="multi" onchange="document.getElementById('langOther').classList.toggle('show',this.checked)"><label>Multiple languages</label></label>
+        <label class="opt-item"><input type="checkbox" name="languages[]" value="rtl"><label>RTL (Arabic, Hebrew)</label></label>
+        <label class="opt-item"><input type="checkbox" name="languages[]" value="not_sure"><label>Not sure yet</label></label>
+      </div>
+      <div class="other-input" id="langOther"><input type="text" name="languages_other" placeholder="Specify languages…"></div>
+    </div>
+
+  </div>
+</div>
+
+<!-- ===== SECTION 3: CORE FEATURES ===== -->
+<div class="section" id="sec3">
+  <div class="section-header" onclick="toggleSection('sec3')">
+    <div class="section-num">3</div>
+    <div class="section-title-wrap">
+      <div class="section-title">Core Features &amp; Functionality</div>
+      <div class="section-subtitle">User management, content, communication, search, integrations</div>
+    </div>
+    <span class="section-arrow">▾</span>
+  </div>
+  <div class="section-body">
+
+    <div class="field-group">
+      <div class="subsection-heading">3.1 User Management</div>
+      <div class="option-grid">
+        <label class="opt-item"><input type="checkbox" name="user_mgmt[]" value="registration"><label>User Registration/Sign-up</label></label>
+        <label class="opt-item"><input type="checkbox" name="user_mgmt[]" value="email_verify"><label>Email verification</label></label>
+        <label class="opt-item"><input type="checkbox" name="user_mgmt[]" value="social_login"><label>Social login (Google, Facebook, Apple…)</label></label>
+        <label class="opt-item"><input type="checkbox" name="user_mgmt[]" value="2fa"><label>Two-Factor Authentication (2FA)</label></label>
+        <label class="opt-item"><input type="checkbox" name="user_mgmt[]" value="sso"><label>Single Sign-On (SSO)</label></label>
+        <label class="opt-item"><input type="checkbox" name="user_mgmt[]" value="profile_mgmt"><label>User profile management</label></label>
+        <label class="opt-item"><input type="checkbox" name="user_mgmt[]" value="pwd_reset"><label>Password reset/recovery</label></label>
+        <label class="opt-item"><input type="checkbox" name="user_mgmt[]" value="deactivation"><label>Account deactivation/deletion</label></label>
+        <label class="opt-item"><input type="checkbox" name="user_mgmt[]" value="roles_perms"><label>User roles &amp; permissions</label></label>
+        <label class="opt-item"><input type="checkbox" name="user_mgmt[]" value="session_mgmt"><label>Session management</label></label>
+        <label class="opt-item"><input type="checkbox" name="user_mgmt[]" value="no_accounts"><label>No user accounts needed</label></label>
+      </div>
+    </div>
+
+    <div class="field-group">
+      <div class="subsection-heading">3.2 Content Management</div>
+      <div class="option-grid">
+        <label class="opt-item"><input type="checkbox" name="content[]" value="crud"><label>Create/Edit/Delete content</label></label>
+        <label class="opt-item"><input type="checkbox" name="content[]" value="rich_text"><label>Rich text editor</label></label>
+        <label class="opt-item"><input type="checkbox" name="content[]" value="media_upload"><label>Media upload (images, videos, docs)</label></label>
+        <label class="opt-item"><input type="checkbox" name="content[]" value="cat_tagging"><label>Content categorization/tagging</label></label>
+        <label class="opt-item"><input type="checkbox" name="content[]" value="search_filter"><label>Content search &amp; filtering</label></label>
+        <label class="opt-item"><input type="checkbox" name="content[]" value="versioning"><label>Content versioning/revision history</label></label>
+        <label class="opt-item"><input type="checkbox" name="content[]" value="scheduling"><label>Content scheduling/publishing</label></label>
+        <label class="opt-item"><input type="checkbox" name="content[]" value="approval"><label>Content approval workflow</label></label>
+        <label class="opt-item"><input type="checkbox" name="content[]" value="multilang"><label>Multi-language content</label></label>
+        <label class="opt-item"><input type="checkbox" name="content[]" value="import_export"><label>Content import/export</label></label>
+      </div>
+    </div>
+
+    <div class="field-group">
+      <div class="subsection-heading">3.3 Communication Features</div>
+      <div class="option-grid">
+        <label class="opt-item"><input type="checkbox" name="comm[]" value="email_notif"><label>Email notifications (transactional)</label></label>
+        <label class="opt-item"><input type="checkbox" name="comm[]" value="sms_notif"><label>SMS notifications</label></label>
+        <label class="opt-item"><input type="checkbox" name="comm[]" value="push_notif"><label>Push notifications (mobile/web)</label></label>
+        <label class="opt-item"><input type="checkbox" name="comm[]" value="in_app_notif"><label>In-app notifications/alerts</label></label>
+        <label class="opt-item"><input type="checkbox" name="comm[]" value="realtime_chat"><label>Real-time chat/messaging</label></label>
+        <label class="opt-item"><input type="checkbox" name="comm[]" value="video_call"><label>Video conferencing/calls</label></label>
+        <label class="opt-item"><input type="checkbox" name="comm[]" value="comments"><label>Comment system</label></label>
+        <label class="opt-item"><input type="checkbox" name="comm[]" value="forum"><label>Forum/discussion board</label></label>
+        <label class="opt-item"><input type="checkbox" name="comm[]" value="announcements"><label>Announcement system</label></label>
+        <label class="opt-item"><input type="checkbox" name="comm[]" value="newsletter"><label>Newsletter/email marketing</label></label>
+        <label class="opt-item"><input type="checkbox" name="comm[]" value="contact_forms"><label>Contact forms</label></label>
+      </div>
+    </div>
+
+    <div class="field-group">
+      <div class="subsection-heading">3.4 Search &amp; Discovery</div>
+      <div class="option-grid">
+        <label class="opt-item"><input type="checkbox" name="search[]" value="basic"><label>Basic keyword search</label></label>
+        <label class="opt-item"><input type="checkbox" name="search[]" value="advanced"><label>Advanced search with filters</label></label>
+        <label class="opt-item"><input type="checkbox" name="search[]" value="fulltext"><label>Full-text search</label></label>
+        <label class="opt-item"><input type="checkbox" name="search[]" value="autocomplete"><label>Auto-suggest/autocomplete</label></label>
+        <label class="opt-item"><input type="checkbox" name="search[]" value="geo_search"><label>Geolocation/map-based search</label></label>
+        <label class="opt-item"><input type="checkbox" name="search[]" value="voice_search"><label>Voice search</label></label>
+        <label class="opt-item"><input type="checkbox" name="search[]" value="img_search"><label>Image search</label></label>
+        <label class="opt-item"><input type="checkbox" name="search[]" value="saved_search"><label>Saved searches</label></label>
+        <label class="opt-item"><input type="checkbox" name="search[]" value="search_analytics"><label>Search analytics</label></label>
+      </div>
+    </div>
+
+    <div class="field-group">
+      <div class="subsection-heading">3.5 Analytics &amp; Reporting</div>
+      <div class="option-grid">
+        <label class="opt-item"><input type="checkbox" name="analytics[]" value="user_behavior"><label>User analytics/behavior tracking</label></label>
+        <label class="opt-item"><input type="checkbox" name="analytics[]" value="biz_reports"><label>Business/sales reports</label></label>
+        <label class="opt-item"><input type="checkbox" name="analytics[]" value="dashboards"><label>Custom dashboards</label></label>
+        <label class="opt-item"><input type="checkbox" name="analytics[]" value="realtime"><label>Real-time analytics</label></label>
+        <label class="opt-item"><input type="checkbox" name="analytics[]" value="data_export"><label>Data export (CSV, PDF, Excel)</label></label>
+        <label class="opt-item"><input type="checkbox" name="analytics[]" value="scheduled"><label>Scheduled reports</label></label>
+        <label class="opt-item"><input type="checkbox" name="analytics[]" value="ga"><label>Google Analytics integration</label></label>
+        <label class="opt-item"><input type="checkbox" name="analytics[]" value="custom_engine"><label>Custom reporting engine</label></label>
+        <label class="opt-item"><input type="checkbox" name="analytics[]" value="charts"><label>Data visualization/charts</label></label>
+      </div>
+    </div>
+
+    <div class="field-group">
+      <div class="subsection-heading">3.6 Third-Party Integrations</div>
+      <div class="option-grid">
+        <label class="opt-item"><input type="checkbox" name="integrations[]" value="payment_gw"><label>Payment Gateways (Stripe, PayPal, Razorpay…)</label></label>
+        <label class="opt-item"><input type="checkbox" name="integrations[]" value="email_svc"><label>Email Services (SendGrid, Mailgun, SES)</label></label>
+        <label class="opt-item"><input type="checkbox" name="integrations[]" value="sms_gw"><label>SMS Gateways (Twilio, Nexmo)</label></label>
+        <label class="opt-item"><input type="checkbox" name="integrations[]" value="social"><label>Social Media Platforms</label></label>
+        <label class="opt-item"><input type="checkbox" name="integrations[]" value="google_svc"><label>Google Services (Maps, Analytics, Calendar)</label></label>
+        <label class="opt-item"><input type="checkbox" name="integrations[]" value="crm"><label>CRM (Salesforce, HubSpot, Zoho)</label></label>
+        <label class="opt-item"><input type="checkbox" name="integrations[]" value="accounting"><label>Accounting (QuickBooks, Xero, Tally)</label></label>
+        <label class="opt-item"><input type="checkbox" name="integrations[]" value="erp"><label>ERP Systems</label></label>
+        <label class="opt-item"><input type="checkbox" name="integrations[]" value="mktg_auto"><label>Marketing Automation (Mailchimp)</label></label>
+        <label class="opt-item"><input type="checkbox" name="integrations[]" value="cloud_storage"><label>Cloud Storage (AWS S3, GCS, Azure)</label></label>
+        <label class="opt-item"><input type="checkbox" name="integrations[]" value="video_platform"><label>Video Platforms (YouTube, Vimeo)</label></label>
+        <label class="opt-item"><input type="checkbox" name="integrations[]" value="shipping"><label>Shipping Carriers (FedEx, UPS, DHL)</label></label>
+        <label class="opt-item"><input type="checkbox" name="integrations[]" value="auth_provider"><label>Auth Providers (Auth0, Okta)</label></label>
+        <label class="opt-item"><input type="checkbox" name="integrations[]" value="analytics_tools"><label>Analytics Tools (Mixpanel, Amplitude)</label></label>
+        <label class="opt-item"><input type="checkbox" name="integrations[]" value="support_tools"><label>Customer Support (Zendesk, Intercom)</label></label>
+      </div>
+      <div style="margin-top:8px"><input type="text" name="integrations_other" placeholder="Other APIs or integrations…"></div>
+    </div>
+
+  </div>
+</div>
+
+<!-- ===== SECTION 4: INDUSTRY ECOMMERCE ===== -->
+<div class="section industry-section" id="sec-ecommerce">
+  <div class="section-header" onclick="toggleSection('sec-ecommerce')">
+    <div class="section-num">4</div>
+    <div class="section-title-wrap">
+      <div class="section-title">E-commerce Specific Questions</div>
+      <div class="section-subtitle">Store model, products, payments, shipping, inventory</div>
+    </div>
+    <span class="section-arrow">▾</span>
+  </div>
+  <div class="section-body">
+    <div class="field-group">
+      <div class="subsection-heading">E-commerce Model</div>
+      <div class="option-grid">
+        <label class="opt-item"><input type="radio" name="ecom_model" value="simple_catalog"><label>Simple Catalog (inquiry, no checkout)</label></label>
+        <label class="opt-item"><input type="radio" name="ecom_model" value="basic"><label>Basic E-commerce (single vendor)</label></label>
+        <label class="opt-item"><input type="radio" name="ecom_model" value="advanced"><label>Advanced E-commerce (complex shipping)</label></label>
+        <label class="opt-item"><input type="radio" name="ecom_model" value="multivendor"><label>Multi-vendor Marketplace (Amazon/Etsy)</label></label>
+        <label class="opt-item"><input type="radio" name="ecom_model" value="auction"><label>Auction-based Platform (eBay)</label></label>
+        <label class="opt-item"><input type="radio" name="ecom_model" value="subscription"><label>Subscription E-commerce</label></label>
+        <label class="opt-item"><input type="radio" name="ecom_model" value="headless"><label>Headless Commerce</label></label>
+        <label class="opt-item"><input type="radio" name="ecom_model" value="omnichannel"><label>Omnichannel (Online + POS)</label></label>
+      </div>
+    </div>
+    <div class="field-group">
+      <div class="subsection-heading">Product Catalog</div>
+      <div class="two-col">
+        <div>
+          <div class="field-hint">Number of products</div>
+          <div class="option-grid cols-1">
+            <label class="opt-item"><input type="radio" name="product_count" value="lt100"><label>&lt; 100</label></label>
+            <label class="opt-item"><input type="radio" name="product_count" value="100_1k"><label>100 – 1,000</label></label>
+            <label class="opt-item"><input type="radio" name="product_count" value="1k_10k"><label>1,000 – 10,000</label></label>
+            <label class="opt-item"><input type="radio" name="product_count" value="10k_100k"><label>10,000 – 100,000</label></label>
+            <label class="opt-item"><input type="radio" name="product_count" value="100k_plus"><label>&gt; 100,000</label></label>
+          </div>
+        </div>
+        <div>
+          <div class="field-hint">Category depth</div>
+          <div class="option-grid cols-1">
+            <label class="opt-item"><input type="radio" name="cat_depth" value="single"><label>Single level (no subcategories)</label></label>
+            <label class="opt-item"><input type="radio" name="cat_depth" value="2_3"><label>2–3 levels</label></label>
+            <label class="opt-item"><input type="radio" name="cat_depth" value="4_plus"><label>4+ levels (deep hierarchy)</label></label>
+          </div>
+        </div>
+      </div>
+      <div class="field-hint" style="margin-top:14px">Product types needed</div>
+      <div class="option-grid">
+        <label class="opt-item"><input type="checkbox" name="product_types[]" value="simple"><label>Simple products</label></label>
+        <label class="opt-item"><input type="checkbox" name="product_types[]" value="variable"><label>Variable products (size, color)</label></label>
+        <label class="opt-item"><input type="checkbox" name="product_types[]" value="configurable"><label>Configurable products</label></label>
+        <label class="opt-item"><input type="checkbox" name="product_types[]" value="bundled"><label>Bundled products</label></label>
+        <label class="opt-item"><input type="checkbox" name="product_types[]" value="digital"><label>Virtual/Digital products</label></label>
+        <label class="opt-item"><input type="checkbox" name="product_types[]" value="downloadable"><label>Downloadable products</label></label>
+        <label class="opt-item"><input type="checkbox" name="product_types[]" value="rental"><label>Rental/Booking products</label></label>
+        <label class="opt-item"><input type="checkbox" name="product_types[]" value="custom_order"><label>Made-to-order/Custom</label></label>
+      </div>
+      <div class="field-hint" style="margin-top:14px">Product information requirements</div>
+      <div class="option-grid">
+        <label class="opt-item"><input type="checkbox" name="product_info[]" value="multi_images"><label>Multiple product images</label></label>
+        <label class="opt-item"><input type="checkbox" name="product_info[]" value="360_view"><label>360° product view</label></label>
+        <label class="opt-item"><input type="checkbox" name="product_info[]" value="videos"><label>Product videos</label></label>
+        <label class="opt-item"><input type="checkbox" name="product_info[]" value="comparison"><label>Product comparison feature</label></label>
+        <label class="opt-item"><input type="checkbox" name="product_info[]" value="ar_vr"><label>AR/VR product preview</label></label>
+        <label class="opt-item"><input type="checkbox" name="product_info[]" value="live_inventory"><label>Live inventory display</label></label>
+        <label class="opt-item"><input type="checkbox" name="product_info[]" value="preorder"><label>Pre-order capabilities</label></label>
+        <label class="opt-item"><input type="checkbox" name="product_info[]" value="back_in_stock"><label>Back-in-stock alerts</label></label>
+      </div>
+    </div>
+    <div class="field-group">
+      <div class="subsection-heading">Payment Processing</div>
+      <div class="field-hint">Payment methods</div>
+      <div class="option-grid">
+        <label class="opt-item"><input type="checkbox" name="payment_methods[]" value="card"><label>Credit/Debit Cards</label></label>
+        <label class="opt-item"><input type="checkbox" name="payment_methods[]" value="digital_wallets"><label>Digital Wallets (PayPal, Apple Pay, Google Pay)</label></label>
+        <label class="opt-item"><input type="checkbox" name="payment_methods[]" value="bnpl"><label>Buy Now Pay Later (Klarna, Afterpay)</label></label>
+        <label class="opt-item"><input type="checkbox" name="payment_methods[]" value="ach"><label>ACH/Bank Transfer</label></label>
+        <label class="opt-item"><input type="checkbox" name="payment_methods[]" value="crypto"><label>Cryptocurrency</label></label>
+        <label class="opt-item"><input type="checkbox" name="payment_methods[]" value="cod"><label>Cash on Delivery</label></label>
+        <label class="opt-item"><input type="checkbox" name="payment_methods[]" value="gift_cards"><label>Store Credit/Gift Cards</label></label>
+        <label class="opt-item"><input type="checkbox" name="payment_methods[]" value="multi_currency"><label>Multi-currency support</label></label>
+      </div>
+      <div class="field-hint" style="margin-top:12px">Gateway preference</div>
+      <div class="option-grid">
+        <label class="opt-item"><input type="checkbox" name="payment_gw[]" value="stripe"><label>Stripe</label></label>
+        <label class="opt-item"><input type="checkbox" name="payment_gw[]" value="paypal"><label>PayPal</label></label>
+        <label class="opt-item"><input type="checkbox" name="payment_gw[]" value="razorpay"><label>Razorpay</label></label>
+        <label class="opt-item"><input type="checkbox" name="payment_gw[]" value="square"><label>Square</label></label>
+        <label class="opt-item"><input type="checkbox" name="payment_gw[]" value="braintree"><label>Braintree</label></label>
+        <label class="opt-item"><input type="checkbox" name="payment_gw[]" value="gw_recommend"><label>Need recommendation</label></label>
+      </div>
+      <div class="field-hint" style="margin-top:12px">Checkout features</div>
+      <div class="option-grid">
+        <label class="opt-item"><input type="checkbox" name="checkout[]" value="guest"><label>Guest checkout</label></label>
+        <label class="opt-item"><input type="checkbox" name="checkout[]" value="one_click"><label>One-click checkout</label></label>
+        <label class="opt-item"><input type="checkbox" name="checkout[]" value="save_payment"><label>Save payment methods</label></label>
+        <label class="opt-item"><input type="checkbox" name="checkout[]" value="gift_options"><label>Gift options (wrapping, messages)</label></label>
+        <label class="opt-item"><input type="checkbox" name="checkout[]" value="installments"><label>Installment payment plans</label></label>
+        <label class="opt-item"><input type="checkbox" name="checkout[]" value="split_payment"><label>Split payment across methods</label></label>
+      </div>
+      <div class="field-hint" style="margin-top:12px">Tax &amp; compliance</div>
+      <div class="option-grid">
+        <label class="opt-item"><input type="checkbox" name="tax[]" value="auto_tax"><label>Automatic tax calculation</label></label>
+        <label class="opt-item"><input type="checkbox" name="tax[]" value="multi_state"><label>Multi-state/country tax rules</label></label>
+        <label class="opt-item"><input type="checkbox" name="tax[]" value="vat_gst"><label>VAT/GST compliance</label></label>
+        <label class="opt-item"><input type="checkbox" name="tax[]" value="tax_reporting"><label>Tax reporting &amp; filing integration</label></label>
+        <label class="opt-item"><input type="checkbox" name="tax[]" value="eu_digital_tax"><label>Digital tax compliance (EU/UK)</label></label>
+      </div>
+    </div>
+    <div class="field-group">
+      <div class="subsection-heading">Shipping &amp; Fulfillment</div>
+      <div class="option-grid">
+        <label class="opt-item"><input type="checkbox" name="shipping[]" value="fixed"><label>Fixed shipping rates</label></label>
+        <label class="opt-item"><input type="checkbox" name="shipping[]" value="free_threshold"><label>Free shipping (threshold-based)</label></label>
+        <label class="opt-item"><input type="checkbox" name="shipping[]" value="carrier_calc"><label>Carrier-calculated rates (real-time)</label></label>
+        <label class="opt-item"><input type="checkbox" name="shipping[]" value="local_pickup"><label>Local pickup / In-store pickup</label></label>
+        <label class="opt-item"><input type="checkbox" name="shipping[]" value="same_day"><label>Same-day delivery</label></label>
+        <label class="opt-item"><input type="checkbox" name="shipping[]" value="scheduled"><label>Scheduled delivery</label></label>
+        <label class="opt-item"><input type="checkbox" name="shipping[]" value="international"><label>International shipping</label></label>
+        <label class="opt-item"><input type="checkbox" name="shipping[]" value="dropshipping"><label>Dropshipping</label></label>
+        <label class="opt-item"><input type="checkbox" name="shipping[]" value="multi_warehouse"><label>Multi-warehouse fulfillment</label></label>
+        <label class="opt-item"><input type="checkbox" name="shipping[]" value="tracking"><label>Real-time shipment tracking</label></label>
+        <label class="opt-item"><input type="checkbox" name="shipping[]" value="return_labels"><label>Return label generation</label></label>
+        <label class="opt-item"><input type="checkbox" name="shipping[]" value="addr_validation"><label>Address validation</label></label>
+      </div>
+    </div>
+    <div class="field-group">
+      <div class="subsection-heading">Inventory Management</div>
+      <div class="option-grid">
+        <label class="opt-item"><input type="checkbox" name="inventory[]" value="basic_tracking"><label>Basic stock tracking</label></label>
+        <label class="opt-item"><input type="checkbox" name="inventory[]" value="qty_tracking"><label>Quantity-based tracking</label></label>
+        <label class="opt-item"><input type="checkbox" name="inventory[]" value="multi_loc"><label>Multi-location inventory</label></label>
+        <label class="opt-item"><input type="checkbox" name="inventory[]" value="realtime_sync"><label>Real-time inventory sync</label></label>
+        <label class="opt-item"><input type="checkbox" name="inventory[]" value="barcode"><label>Barcode/SKU management</label></label>
+        <label class="opt-item"><input type="checkbox" name="inventory[]" value="low_stock"><label>Low stock alerts</label></label>
+        <label class="opt-item"><input type="checkbox" name="inventory[]" value="reorder"><label>Automated reorder points</label></label>
+        <label class="opt-item"><input type="checkbox" name="inventory[]" value="supplier_mgmt"><label>Supplier management</label></label>
+        <label class="opt-item"><input type="checkbox" name="inventory[]" value="forecasting"><label>Inventory forecasting</label></label>
+        <label class="opt-item"><input type="checkbox" name="inventory[]" value="returns_inv"><label>Returns inventory management</label></label>
+      </div>
+    </div>
+    <div class="field-group">
+      <div class="subsection-heading">Customer Experience &amp; Promotions</div>
+      <div class="option-grid">
+        <label class="opt-item"><input type="checkbox" name="customer_exp[]" value="wishlist"><label>Wishlist/Save for later</label></label>
+        <label class="opt-item"><input type="checkbox" name="customer_exp[]" value="recommendations"><label>Product recommendations engine</label></label>
+        <label class="opt-item"><input type="checkbox" name="customer_exp[]" value="abandoned_cart"><label>Abandoned cart recovery</label></label>
+        <label class="opt-item"><input type="checkbox" name="customer_exp[]" value="loyalty"><label>Customer loyalty program</label></label>
+        <label class="opt-item"><input type="checkbox" name="customer_exp[]" value="referral"><label>Referral program</label></label>
+        <label class="opt-item"><input type="checkbox" name="customer_exp[]" value="reviews"><label>Reviews &amp; ratings</label></label>
+        <label class="opt-item"><input type="checkbox" name="customer_exp[]" value="coupons"><label>Coupon codes</label></label>
+        <label class="opt-item"><input type="checkbox" name="customer_exp[]" value="flash_sales"><label>Flash sales</label></label>
+        <label class="opt-item"><input type="checkbox" name="customer_exp[]" value="volume_pricing"><label>Volume/Tier pricing</label></label>
+        <label class="opt-item"><input type="checkbox" name="customer_exp[]" value="bundle_discounts"><label>Bundle discounts</label></label>
+      </div>
+    </div>
+    <div class="field-group">
+      <div class="subsection-heading">Platform Preference</div>
+      <div class="option-grid">
+        <label class="opt-item"><input type="radio" name="ecom_platform" value="woocommerce"><label>WooCommerce (WordPress)</label></label>
+        <label class="opt-item"><input type="radio" name="ecom_platform" value="shopify"><label>Shopify</label></label>
+        <label class="opt-item"><input type="radio" name="ecom_platform" value="shopify_plus"><label>Shopify Plus</label></label>
+        <label class="opt-item"><input type="radio" name="ecom_platform" value="magento"><label>Magento/Adobe Commerce</label></label>
+        <label class="opt-item"><input type="radio" name="ecom_platform" value="bigcommerce"><label>BigCommerce</label></label>
+        <label class="opt-item"><input type="radio" name="ecom_platform" value="custom"><label>Custom solution (Laravel/Node.js)</label></label>
+        <label class="opt-item"><input type="radio" name="ecom_platform" value="headless"><label>Headless commerce</label></label>
+        <label class="opt-item"><input type="radio" name="ecom_platform" value="recommend"><label>Need recommendation</label></label>
+      </div>
+    </div>
+  </div>
+</div>
+
+<!-- ===== SECTION 4: HEALTHCARE ===== -->
+<div class="section industry-section" id="sec-healthcare">
+  <div class="section-header" onclick="toggleSection('sec-healthcare')">
+    <div class="section-num">4</div>
+    <div class="section-title-wrap">
+      <div class="section-title">Healthcare Specific Questions</div>
+      <div class="section-subtitle">App type, HIPAA, patient management, EHR integrations</div>
+    </div>
+    <span class="section-arrow">▾</span>
+  </div>
+  <div class="section-body">
+    <div class="field-group">
+      <div class="subsection-heading">Healthcare Application Type</div>
+      <div class="option-grid">
+        <label class="opt-item"><input type="radio" name="hc_app_type" value="patient_portal"><label>Patient Portal</label></label>
+        <label class="opt-item"><input type="radio" name="hc_app_type" value="telemedicine"><label>Telemedicine/Telehealth Platform</label></label>
+        <label class="opt-item"><input type="radio" name="hc_app_type" value="ehr"><label>EHR/EMR System</label></label>
+        <label class="opt-item"><input type="radio" name="hc_app_type" value="practice_mgmt"><label>Practice Management System</label></label>
+        <label class="opt-item"><input type="radio" name="hc_app_type" value="billing"><label>Medical Billing System</label></label>
+        <label class="opt-item"><input type="radio" name="hc_app_type" value="hc_crm"><label>Healthcare CRM</label></label>
+        <label class="opt-item"><input type="radio" name="hc_app_type" value="wellness"><label>Wellness/Fitness App</label></label>
+        <label class="opt-item"><input type="radio" name="hc_app_type" value="mental_health"><label>Mental Health Platform</label></label>
+        <label class="opt-item"><input type="radio" name="hc_app_type" value="remote_monitoring"><label>Remote Patient Monitoring</label></label>
+        <label class="opt-item"><input type="radio" name="hc_app_type" value="pharmacy"><label>Pharmacy Management</label></label>
+        <label class="opt-item"><input type="radio" name="hc_app_type" value="hc_marketplace"><label>Healthcare Marketplace</label></label>
+        <label class="opt-item"><input type="radio" name="hc_app_type" value="analytics"><label>Healthcare Analytics Platform</label></label>
+      </div>
+    </div>
+    <div class="field-group">
+      <div class="subsection-heading">HIPAA &amp; Compliance</div>
+      <div class="field-hint">Will you handle PHI (Protected Health Information)?</div>
+      <div class="option-grid">
+        <label class="opt-item"><input type="radio" name="phi" value="yes"><label>Yes</label></label>
+        <label class="opt-item"><input type="radio" name="phi" value="no"><label>No</label></label>
+        <label class="opt-item"><input type="radio" name="phi" value="unsure"><label>Unsure</label></label>
+      </div>
+      <div class="field-hint" style="margin-top:12px">Types of PHI involved</div>
+      <div class="option-grid">
+        <label class="opt-item"><input type="checkbox" name="phi_types[]" value="demographics"><label>Patient demographics</label></label>
+        <label class="opt-item"><input type="checkbox" name="phi_types[]" value="medical_records"><label>Medical records</label></label>
+        <label class="opt-item"><input type="checkbox" name="phi_types[]" value="lab_results"><label>Lab results</label></label>
+        <label class="opt-item"><input type="checkbox" name="phi_types[]" value="prescriptions"><label>Prescriptions</label></label>
+        <label class="opt-item"><input type="checkbox" name="phi_types[]" value="insurance"><label>Insurance information</label></label>
+        <label class="opt-item"><input type="checkbox" name="phi_types[]" value="billing_data"><label>Payment/billing data</label></label>
+        <label class="opt-item"><input type="checkbox" name="phi_types[]" value="imaging"><label>Medical images (X-rays, MRI)</label></label>
+        <label class="opt-item"><input type="checkbox" name="phi_types[]" value="notes"><label>Clinical notes</label></label>
+      </div>
+      <div class="field-hint" style="margin-top:12px">Compliance certifications required</div>
+      <div class="option-grid">
+        <label class="opt-item"><input type="checkbox" name="hc_compliance[]" value="hipaa"><label>HIPAA compliance</label></label>
+        <label class="opt-item"><input type="checkbox" name="hc_compliance[]" value="baa"><label>Business Associate Agreement (BAA)</label></label>
+        <label class="opt-item"><input type="checkbox" name="hc_compliance[]" value="soc2"><label>SOC 2 Type II</label></label>
+        <label class="opt-item"><input type="checkbox" name="hc_compliance[]" value="hitrust"><label>HITRUST certification</label></label>
+        <label class="opt-item"><input type="checkbox" name="hc_compliance[]" value="hl7_fhir"><label>HL7 FHIR compliance</label></label>
+        <label class="opt-item"><input type="checkbox" name="hc_compliance[]" value="fda"><label>FDA regulations</label></label>
+        <label class="opt-item"><input type="checkbox" name="hc_compliance[]" value="gdpr_eu"><label>International/GDPR (EU patients)</label></label>
+      </div>
+    </div>
+    <div class="field-group">
+      <div class="subsection-heading">Patient Features</div>
+      <div class="option-grid">
+        <label class="opt-item"><input type="checkbox" name="patient_features[]" value="registration"><label>Patient registration/onboarding</label></label>
+        <label class="opt-item"><input type="checkbox" name="patient_features[]" value="portal"><label>Patient portal</label></label>
+        <label class="opt-item"><input type="checkbox" name="patient_features[]" value="health_records"><label>Personal health records access</label></label>
+        <label class="opt-item"><input type="checkbox" name="patient_features[]" value="appt_booking"><label>Appointment booking</label></label>
+        <label class="opt-item"><input type="checkbox" name="patient_features[]" value="rx_refill"><label>Prescription refill requests</label></label>
+        <label class="opt-item"><input type="checkbox" name="patient_features[]" value="lab_results"><label>Lab results viewing</label></label>
+        <label class="opt-item"><input type="checkbox" name="patient_features[]" value="billing_history"><label>Billing/payment history</label></label>
+        <label class="opt-item"><input type="checkbox" name="patient_features[]" value="family_acct"><label>Family account management</label></label>
+        <label class="opt-item"><input type="checkbox" name="patient_features[]" value="messaging"><label>Patient messaging with providers</label></label>
+        <label class="opt-item"><input type="checkbox" name="patient_features[]" value="med_reminders"><label>Medication reminders</label></label>
+        <label class="opt-item"><input type="checkbox" name="patient_features[]" value="symptom_checker"><label>Symptom checker</label></label>
+      </div>
+    </div>
+    <div class="field-group">
+      <div class="subsection-heading">Provider Features</div>
+      <div class="option-grid">
+        <label class="opt-item"><input type="checkbox" name="provider_features[]" value="dashboard"><label>Provider dashboard</label></label>
+        <label class="opt-item"><input type="checkbox" name="provider_features[]" value="patient_charts"><label>Patient charts/records</label></label>
+        <label class="opt-item"><input type="checkbox" name="provider_features[]" value="soap_notes"><label>Clinical notes (SOAP notes)</label></label>
+        <label class="opt-item"><input type="checkbox" name="provider_features[]" value="e_prescribing"><label>E-prescribing</label></label>
+        <label class="opt-item"><input type="checkbox" name="provider_features[]" value="lab_ordering"><label>Lab ordering</label></label>
+        <label class="opt-item"><input type="checkbox" name="provider_features[]" value="referral_mgmt"><label>Referral management</label></label>
+        <label class="opt-item"><input type="checkbox" name="provider_features[]" value="schedule_mgmt"><label>Schedule management</label></label>
+        <label class="opt-item"><input type="checkbox" name="provider_features[]" value="billing_coding"><label>Billing/coding assistance</label></label>
+      </div>
+    </div>
+    <div class="field-group">
+      <div class="subsection-heading">Telemedicine Features (if applicable)</div>
+      <div class="option-grid">
+        <label class="opt-item"><input type="checkbox" name="tele_features[]" value="video_1on1"><label>Video consultations (1-on-1)</label></label>
+        <label class="opt-item"><input type="checkbox" name="tele_features[]" value="group_video"><label>Group video sessions</label></label>
+        <label class="opt-item"><input type="checkbox" name="tele_features[]" value="waiting_room"><label>Virtual waiting room</label></label>
+        <label class="opt-item"><input type="checkbox" name="tele_features[]" value="appt_scheduling"><label>Appointment scheduling</label></label>
+        <label class="opt-item"><input type="checkbox" name="tele_features[]" value="e_prescribing"><label>E-prescribing integration</label></label>
+        <label class="opt-item"><input type="checkbox" name="tele_features[]" value="session_notes"><label>Session notes/documentation</label></label>
+        <label class="opt-item"><input type="checkbox" name="tele_features[]" value="insurance_verify"><label>Insurance verification</label></label>
+        <label class="opt-item"><input type="checkbox" name="tele_features[]" value="recording"><label>Session recording (with consent)</label></label>
+      </div>
+      <div class="field-hint" style="margin-top:12px">Video platform preference</div>
+      <div class="option-grid">
+        <label class="opt-item"><input type="radio" name="video_platform" value="twilio"><label>Twilio Video</label></label>
+        <label class="opt-item"><input type="radio" name="video_platform" value="zoom_hc"><label>Zoom Healthcare API</label></label>
+        <label class="opt-item"><input type="radio" name="video_platform" value="vonage"><label>Vonage/TokBox</label></label>
+        <label class="opt-item"><input type="radio" name="video_platform" value="agora"><label>Agora.io</label></label>
+        <label class="opt-item"><input type="radio" name="video_platform" value="custom_webrtc"><label>Custom WebRTC solution</label></label>
+        <label class="opt-item"><input type="radio" name="video_platform" value="vp_recommend"><label>Need recommendation</label></label>
+      </div>
+    </div>
+    <div class="field-group">
+      <div class="subsection-heading">EHR/EMR Integrations</div>
+      <div class="option-grid">
+        <label class="opt-item"><input type="checkbox" name="ehr_integrations[]" value="epic"><label>Epic</label></label>
+        <label class="opt-item"><input type="checkbox" name="ehr_integrations[]" value="cerner"><label>Cerner</label></label>
+        <label class="opt-item"><input type="checkbox" name="ehr_integrations[]" value="athenahealth"><label>Athenahealth</label></label>
+        <label class="opt-item"><input type="checkbox" name="ehr_integrations[]" value="nextgen"><label>NextGen</label></label>
+        <label class="opt-item"><input type="checkbox" name="ehr_integrations[]" value="eclinicalworks"><label>eClinicalWorks</label></label>
+        <label class="opt-item"><input type="checkbox" name="ehr_integrations[]" value="openemr"><label>OpenEMR</label></label>
+        <label class="opt-item"><input type="checkbox" name="ehr_integrations[]" value="hl7"><label>HL7 interface</label></label>
+        <label class="opt-item"><input type="checkbox" name="ehr_integrations[]" value="fhir_api"><label>FHIR API integration</label></label>
+        <label class="opt-item"><input type="checkbox" name="ehr_integrations[]" value="custom_ehr"><label>Custom EHR</label></label>
+      </div>
+    </div>
+  </div>
+</div>
+
+<!-- ===== SECTION 4: EDUCATION ===== -->
+<div class="section industry-section" id="sec-education">
+  <div class="section-header" onclick="toggleSection('sec-education')">
+    <div class="section-num">4</div>
+    <div class="section-title-wrap">
+      <div class="section-title">Education / LMS Specific Questions</div>
+      <div class="section-subtitle">LMS type, courses, assessments, monetization, standards</div>
+    </div>
+    <span class="section-arrow">▾</span>
+  </div>
+  <div class="section-body">
+    <div class="field-group">
+      <div class="subsection-heading">LMS Type</div>
+      <div class="option-grid">
+        <label class="opt-item"><input type="radio" name="lms_type" value="university"><label>University/College</label></label>
+        <label class="opt-item"><input type="radio" name="lms_type" value="k12"><label>K-12 School</label></label>
+        <label class="opt-item"><input type="radio" name="lms_type" value="corp_training"><label>Corporate Training</label></label>
+        <label class="opt-item"><input type="radio" name="lms_type" value="online_course"><label>Online Course Platform</label></label>
+        <label class="opt-item"><input type="radio" name="lms_type" value="professional_cert"><label>Professional Certification</label></label>
+        <label class="opt-item"><input type="radio" name="lms_type" value="tutoring"><label>Tutoring/Coaching Platform</label></label>
+        <label class="opt-item"><input type="radio" name="lms_type" value="bootcamp"><label>Bootcamp/Skills Training</label></label>
+        <label class="opt-item"><input type="radio" name="lms_type" value="compliance"><label>Compliance Training</label></label>
+      </div>
+      <div class="two-col" style="margin-top:14px">
+        <div>
+          <div class="field-hint">Expected students</div>
+          <div class="option-grid cols-1">
+            <label class="opt-item"><input type="radio" name="student_count" value="lt100"><label>&lt; 100</label></label>
+            <label class="opt-item"><input type="radio" name="student_count" value="100_500"><label>100 – 500</label></label>
+            <label class="opt-item"><input type="radio" name="student_count" value="500_2k"><label>500 – 2,000</label></label>
+            <label class="opt-item"><input type="radio" name="student_count" value="2k_10k"><label>2,000 – 10,000</label></label>
+            <label class="opt-item"><input type="radio" name="student_count" value="10k_50k"><label>10,000 – 50,000</label></label>
+            <label class="opt-item"><input type="radio" name="student_count" value="50k_plus"><label>50,000+</label></label>
+          </div>
+        </div>
+        <div>
+          <div class="field-hint">Expected instructors</div>
+          <div class="option-grid cols-1">
+            <label class="opt-item"><input type="radio" name="instructor_count" value="lt10"><label>&lt; 10</label></label>
+            <label class="opt-item"><input type="radio" name="instructor_count" value="10_50"><label>10 – 50</label></label>
+            <label class="opt-item"><input type="radio" name="instructor_count" value="50_200"><label>50 – 200</label></label>
+            <label class="opt-item"><input type="radio" name="instructor_count" value="200_1k"><label>200 – 1,000</label></label>
+            <label class="opt-item"><input type="radio" name="instructor_count" value="1k_plus"><label>1,000+</label></label>
+          </div>
+        </div>
+      </div>
+    </div>
+    <div class="field-group">
+      <div class="subsection-heading">Course Structure &amp; Content</div>
+      <div class="field-hint">Course organization</div>
+      <div class="option-grid">
+        <label class="opt-item"><input type="checkbox" name="course_org[]" value="catalog"><label>Multiple courses/catalog</label></label>
+        <label class="opt-item"><input type="checkbox" name="course_org[]" value="degree_cert"><label>Degree/Certificate programs</label></label>
+        <label class="opt-item"><input type="checkbox" name="course_org[]" value="learning_paths"><label>Learning paths/tracks</label></label>
+        <label class="opt-item"><input type="checkbox" name="course_org[]" value="micro_creds"><label>Micro-credentials/Badges</label></label>
+        <label class="opt-item"><input type="checkbox" name="course_org[]" value="cohort"><label>Cohort-based courses</label></label>
+        <label class="opt-item"><input type="checkbox" name="course_org[]" value="self_paced"><label>Self-paced courses</label></label>
+        <label class="opt-item"><input type="checkbox" name="course_org[]" value="instructor_led"><label>Instructor-led courses</label></label>
+        <label class="opt-item"><input type="checkbox" name="course_org[]" value="blended"><label>Blended learning (online + in-person)</label></label>
+      </div>
+      <div class="field-hint" style="margin-top:12px">Content types</div>
+      <div class="option-grid">
+        <label class="opt-item"><input type="checkbox" name="content_types[]" value="video"><label>Video lectures</label></label>
+        <label class="opt-item"><input type="checkbox" name="content_types[]" value="live_video"><label>Live video sessions</label></label>
+        <label class="opt-item"><input type="checkbox" name="content_types[]" value="audio"><label>Audio files/Podcasts</label></label>
+        <label class="opt-item"><input type="checkbox" name="content_types[]" value="pdf"><label>PDF documents</label></label>
+        <label class="opt-item"><input type="checkbox" name="content_types[]" value="scorm"><label>SCORM packages</label></label>
+        <label class="opt-item"><input type="checkbox" name="content_types[]" value="interactive"><label>Interactive HTML5 content</label></label>
+        <label class="opt-item"><input type="checkbox" name="content_types[]" value="quizzes"><label>Quizzes/Assessments</label></label>
+        <label class="opt-item"><input type="checkbox" name="content_types[]" value="code_exercises"><label>Code exercises</label></label>
+        <label class="opt-item"><input type="checkbox" name="content_types[]" value="simulations"><label>Simulations/Virtual labs</label></label>
+        <label class="opt-item"><input type="checkbox" name="content_types[]" value="drip"><label>Progressive/Drip content delivery</label></label>
+        <label class="opt-item"><input type="checkbox" name="content_types[]" value="offline"><label>Offline viewing capability</label></label>
+      </div>
+    </div>
+    <div class="field-group">
+      <div class="subsection-heading">Assessment &amp; Grading</div>
+      <div class="field-hint">Assessment types</div>
+      <div class="option-grid">
+        <label class="opt-item"><input type="checkbox" name="assessment_types[]" value="mcq"><label>Multiple choice quizzes</label></label>
+        <label class="opt-item"><input type="checkbox" name="assessment_types[]" value="essay"><label>Essay questions</label></label>
+        <label class="opt-item"><input type="checkbox" name="assessment_types[]" value="file_upload"><label>File upload assignments</label></label>
+        <label class="opt-item"><input type="checkbox" name="assessment_types[]" value="peer_review"><label>Peer review assignments</label></label>
+        <label class="opt-item"><input type="checkbox" name="assessment_types[]" value="group_projects"><label>Group projects</label></label>
+        <label class="opt-item"><input type="checkbox" name="assessment_types[]" value="proctored"><label>Proctored exams</label></label>
+        <label class="opt-item"><input type="checkbox" name="assessment_types[]" value="coding"><label>Coding challenges</label></label>
+        <label class="opt-item"><input type="checkbox" name="assessment_types[]" value="adaptive"><label>Adaptive testing</label></label>
+      </div>
+      <div class="field-hint" style="margin-top:12px">Grading features</div>
+      <div class="option-grid">
+        <label class="opt-item"><input type="checkbox" name="grading[]" value="gradebook"><label>Gradebook</label></label>
+        <label class="opt-item"><input type="checkbox" name="grading[]" value="auto_grading"><label>Auto-grading</label></label>
+        <label class="opt-item"><input type="checkbox" name="grading[]" value="progress_tracking"><label>Progress tracking</label></label>
+        <label class="opt-item"><input type="checkbox" name="grading[]" value="certificates"><label>Completion certificates</label></label>
+        <label class="opt-item"><input type="checkbox" name="grading[]" value="badges"><label>Digital badges</label></label>
+        <label class="opt-item"><input type="checkbox" name="grading[]" value="transcripts"><label>Transcripts</label></label>
+        <label class="opt-item"><input type="checkbox" name="grading[]" value="plagiarism"><label>Plagiarism detection</label></label>
+        <label class="opt-item"><input type="checkbox" name="grading[]" value="learning_analytics"><label>Learning analytics</label></label>
+      </div>
+    </div>
+    <div class="field-group">
+      <div class="subsection-heading">LMS Standards &amp; Integrations</div>
+      <div class="option-grid">
+        <label class="opt-item"><input type="checkbox" name="lms_standards[]" value="scorm12"><label>SCORM 1.2</label></label>
+        <label class="opt-item"><input type="checkbox" name="lms_standards[]" value="scorm2004"><label>SCORM 2004</label></label>
+        <label class="opt-item"><input type="checkbox" name="lms_standards[]" value="xapi"><label>xAPI (Tin Can API)</label></label>
+        <label class="opt-item"><input type="checkbox" name="lms_standards[]" value="lti"><label>LTI (Learning Tools Interoperability)</label></label>
+        <label class="opt-item"><input type="checkbox" name="lms_standards[]" value="zoom_int"><label>Zoom/Teams/Google Meet</label></label>
+        <label class="opt-item"><input type="checkbox" name="lms_standards[]" value="sis"><label>Student Information System (SIS)</label></label>
+        <label class="opt-item"><input type="checkbox" name="lms_standards[]" value="google_class"><label>Google Classroom</label></label>
+        <label class="opt-item"><input type="checkbox" name="lms_standards[]" value="turnitin"><label>Plagiarism detection (Turnitin)</label></label>
+      </div>
+    </div>
+    <div class="field-group">
+      <div class="subsection-heading">Monetization (if applicable)</div>
+      <div class="option-grid">
+        <label class="opt-item"><input type="checkbox" name="edu_pricing[]" value="free"><label>Free courses</label></label>
+        <label class="opt-item"><input type="checkbox" name="edu_pricing[]" value="one_time"><label>One-time payment</label></label>
+        <label class="opt-item"><input type="checkbox" name="edu_pricing[]" value="subscription"><label>Subscription (monthly/annual)</label></label>
+        <label class="opt-item"><input type="checkbox" name="edu_pricing[]" value="installments"><label>Payment plans/Installments</label></label>
+        <label class="opt-item"><input type="checkbox" name="edu_pricing[]" value="corp_license"><label>Corporate/Group licensing</label></label>
+        <label class="opt-item"><input type="checkbox" name="edu_pricing[]" value="marketplace"><label>Marketplace (instructors set prices)</label></label>
+        <label class="opt-item"><input type="checkbox" name="edu_pricing[]" value="affiliate"><label>Affiliate/Referral programs</label></label>
+        <label class="opt-item"><input type="checkbox" name="edu_pricing[]" value="rev_sharing"><label>Revenue sharing for instructors</label></label>
+      </div>
+    </div>
+  </div>
+</div>
+
+<!-- ===== SECTION 4: PROPTECH ===== -->
+<div class="section industry-section" id="sec-proptech">
+  <div class="section-header" onclick="toggleSection('sec-proptech')">
+    <div class="section-num">4</div>
+    <div class="section-title-wrap">
+      <div class="section-title">PropTech Specific Questions</div>
+      <div class="section-subtitle">Listings, property management, investment features</div>
+    </div>
+    <span class="section-arrow">▾</span>
+  </div>
+  <div class="section-body">
+    <div class="field-group">
+      <div class="subsection-heading">PropTech Solution Type</div>
+      <div class="option-grid">
+        <label class="opt-item"><input type="radio" name="proptech_type" value="listings_portal"><label>Real Estate Listings Portal (like Zillow)</label></label>
+        <label class="opt-item"><input type="radio" name="proptech_type" value="property_mgmt"><label>Property Management System</label></label>
+        <label class="opt-item"><input type="radio" name="proptech_type" value="re_crm"><label>Real Estate CRM</label></label>
+        <label class="opt-item"><input type="radio" name="proptech_type" value="invest_platform"><label>Real Estate Investment Platform</label></label>
+        <label class="opt-item"><input type="radio" name="proptech_type" value="crowdfunding"><label>Real Estate Crowdfunding</label></label>
+        <label class="opt-item"><input type="radio" name="proptech_type" value="buy_sell_rent"><label>Property Marketplace (Buy/Sell/Rent)</label></label>
+        <label class="opt-item"><input type="radio" name="proptech_type" value="vacation_rental"><label>Vacation Rental Platform</label></label>
+        <label class="opt-item"><input type="radio" name="proptech_type" value="smart_building"><label>Smart Building/IoT Platform</label></label>
+      </div>
+    </div>
+    <div class="field-group">
+      <div class="subsection-heading">Listing Types &amp; Media</div>
+      <div class="option-grid">
+        <label class="opt-item"><input type="checkbox" name="prop_listing[]" value="residential"><label>Residential properties</label></label>
+        <label class="opt-item"><input type="checkbox" name="prop_listing[]" value="commercial"><label>Commercial properties</label></label>
+        <label class="opt-item"><input type="checkbox" name="prop_listing[]" value="land"><label>Land/Lots</label></label>
+        <label class="opt-item"><input type="checkbox" name="prop_listing[]" value="new_construction"><label>New construction</label></label>
+        <label class="opt-item"><input type="checkbox" name="prop_listing[]" value="luxury"><label>Luxury properties</label></label>
+        <label class="opt-item"><input type="checkbox" name="prop_listing[]" value="vacation"><label>Vacation rentals</label></label>
+        <label class="opt-item"><input type="checkbox" name="prop_listing[]" value="student_housing"><label>Student housing</label></label>
+        <label class="opt-item"><input type="checkbox" name="prop_listing[]" value="multi_family"><label>Multi-family units</label></label>
+      </div>
+      <div class="field-hint" style="margin-top:12px">Property media &amp; info</div>
+      <div class="option-grid">
+        <label class="opt-item"><input type="checkbox" name="prop_media[]" value="photos"><label>Property photos</label></label>
+        <label class="opt-item"><input type="checkbox" name="prop_media[]" value="virtual_360"><label>Virtual tours (360°/3D)</label></label>
+        <label class="opt-item"><input type="checkbox" name="prop_media[]" value="video_tours"><label>Video tours</label></label>
+        <label class="opt-item"><input type="checkbox" name="prop_media[]" value="floor_plans"><label>Floor plans</label></label>
+        <label class="opt-item"><input type="checkbox" name="prop_media[]" value="neighborhood"><label>Neighborhood information</label></label>
+        <label class="opt-item"><input type="checkbox" name="prop_media[]" value="school_ratings"><label>School ratings</label></label>
+        <label class="opt-item"><input type="checkbox" name="prop_media[]" value="poi"><label>Nearby amenities (POI)</label></label>
+        <label class="opt-item"><input type="checkbox" name="prop_media[]" value="price_history"><label>Market trends/Price history</label></label>
+        <label class="opt-item"><input type="checkbox" name="prop_media[]" value="matterport"><label>Matterport/3D walkthrough</label></label>
+      </div>
+    </div>
+    <div class="field-group">
+      <div class="subsection-heading">Search Capabilities</div>
+      <div class="option-grid">
+        <label class="opt-item"><input type="checkbox" name="prop_search[]" value="map_view"><label>Location-based search (map view)</label></label>
+        <label class="opt-item"><input type="checkbox" name="prop_search[]" value="radius"><label>Radius search</label></label>
+        <label class="opt-item"><input type="checkbox" name="prop_search[]" value="polygon"><label>Draw search (polygon on map)</label></label>
+        <label class="opt-item"><input type="checkbox" name="prop_search[]" value="price_filter"><label>Price range filter</label></label>
+        <label class="opt-item"><input type="checkbox" name="prop_search[]" value="type_filter"><label>Property type filter</label></label>
+        <label class="opt-item"><input type="checkbox" name="prop_search[]" value="bed_bath"><label>Bedrooms/Bathrooms filter</label></label>
+        <label class="opt-item"><input type="checkbox" name="prop_search[]" value="sqft"><label>Square footage filter</label></label>
+        <label class="opt-item"><input type="checkbox" name="prop_search[]" value="school_dist"><label>School district filter</label></label>
+        <label class="opt-item"><input type="checkbox" name="prop_search[]" value="save_search"><label>Save searches + alerts</label></label>
+        <label class="opt-item"><input type="checkbox" name="prop_search[]" value="mls_idx"><label>MLS IDX integration</label></label>
+      </div>
+    </div>
+    <div class="field-group">
+      <div class="subsection-heading">Property Management (if applicable)</div>
+      <div class="option-grid">
+        <label class="opt-item"><input type="checkbox" name="prop_mgmt[]" value="tenant_portal"><label>Tenant portal</label></label>
+        <label class="opt-item"><input type="checkbox" name="prop_mgmt[]" value="rent_payment"><label>Online rent payment</label></label>
+        <label class="opt-item"><input type="checkbox" name="prop_mgmt[]" value="maintenance_req"><label>Maintenance requests</label></label>
+        <label class="opt-item"><input type="checkbox" name="prop_mgmt[]" value="lease_mgmt"><label>Lease management</label></label>
+        <label class="opt-item"><input type="checkbox" name="prop_mgmt[]" value="tenant_screening"><label>Tenant screening</label></label>
+        <label class="opt-item"><input type="checkbox" name="prop_mgmt[]" value="expense_tracking"><label>Expense tracking</label></label>
+        <label class="opt-item"><input type="checkbox" name="prop_mgmt[]" value="financial_reports"><label>Financial reporting (P&L, cash flow)</label></label>
+        <label class="opt-item"><input type="checkbox" name="prop_mgmt[]" value="work_orders"><label>Work order management</label></label>
+        <label class="opt-item"><input type="checkbox" name="prop_mgmt[]" value="vendor_mgmt"><label>Vendor management</label></label>
+        <label class="opt-item"><input type="checkbox" name="prop_mgmt[]" value="portfolio_dashboard"><label>Multi-property dashboard</label></label>
+        <label class="opt-item"><input type="checkbox" name="prop_mgmt[]" value="late_fees"><label>Late fee automation</label></label>
+        <label class="opt-item"><input type="checkbox" name="prop_mgmt[]" value="1099_gen"><label>1099 generation</label></label>
+      </div>
+    </div>
+    <div class="field-group">
+      <div class="subsection-heading">Investment/Crowdfunding Features (if applicable)</div>
+      <div class="option-grid">
+        <label class="opt-item"><input type="checkbox" name="invest_features[]" value="deal_listings"><label>Investment opportunities listing</label></label>
+        <label class="opt-item"><input type="checkbox" name="invest_features[]" value="investor_dashboard"><label>Investor portfolio dashboard</label></label>
+        <label class="opt-item"><input type="checkbox" name="invest_features[]" value="distributions"><label>Distribution/Returns tracking</label></label>
+        <label class="opt-item"><input type="checkbox" name="invest_features[]" value="kyc_aml"><label>KYC/AML compliance</label></label>
+        <label class="opt-item"><input type="checkbox" name="invest_features[]" value="esign_docs"><label>Subscription agreement e-sign</label></label>
+        <label class="opt-item"><input type="checkbox" name="invest_features[]" value="accredited_verify"><label>Accredited investor verification</label></label>
+        <label class="opt-item"><input type="checkbox" name="invest_features[]" value="tax_docs"><label>Tax documents (K-1, 1099)</label></label>
+        <label class="opt-item"><input type="checkbox" name="invest_features[]" value="sec_compliance"><label>SEC Regulation compliance (Reg D, CF)</label></label>
+        <label class="opt-item"><input type="checkbox" name="invest_features[]" value="cap_table"><label>Cap table management</label></label>
+      </div>
+    </div>
+    <div class="field-group">
+      <div class="subsection-heading">Transaction &amp; Docs</div>
+      <div class="option-grid">
+        <label class="opt-item"><input type="checkbox" name="prop_tx[]" value="esignature"><label>E-signature integration (DocuSign)</label></label>
+        <label class="opt-item"><input type="checkbox" name="prop_tx[]" value="doc_templates"><label>Document templates</label></label>
+        <label class="opt-item"><input type="checkbox" name="prop_tx[]" value="doc_vault"><label>Document storage/vault</label></label>
+        <label class="opt-item"><input type="checkbox" name="prop_tx[]" value="offer_mgmt"><label>Offer management workflow</label></label>
+        <label class="opt-item"><input type="checkbox" name="prop_tx[]" value="escrow_tracking"><label>Escrow tracking</label></label>
+        <label class="opt-item"><input type="checkbox" name="prop_tx[]" value="bg_check"><label>Background check integration</label></label>
+      </div>
+    </div>
+  </div>
+</div>
+
+<!-- ===== SECTION 4: FINTECH ===== -->
+<div class="section industry-section" id="sec-fintech">
+  <div class="section-header" onclick="toggleSection('sec-fintech')">
+    <div class="section-num">4</div>
+    <div class="section-title-wrap">
+      <div class="section-title">FinTech Specific Questions</div>
+      <div class="section-subtitle">Financial app type, compliance, security, core features</div>
+    </div>
+    <span class="section-arrow">▾</span>
+  </div>
+  <div class="section-body">
+    <div class="field-group">
+      <div class="subsection-heading">FinTech Application Type</div>
+      <div class="option-grid">
+        <label class="opt-item"><input type="radio" name="fintech_type" value="neobank"><label>Digital Banking/Neobank</label></label>
+        <label class="opt-item"><input type="radio" name="fintech_type" value="payment_gw"><label>Payment Processing/Gateway</label></label>
+        <label class="opt-item"><input type="radio" name="fintech_type" value="digital_wallet"><label>Digital Wallet</label></label>
+        <label class="opt-item"><input type="radio" name="fintech_type" value="p2p_payment"><label>Peer-to-Peer Payment</label></label>
+        <label class="opt-item"><input type="radio" name="fintech_type" value="lending"><label>Lending Platform</label></label>
+        <label class="opt-item"><input type="radio" name="fintech_type" value="invest_trading"><label>Investment/Trading Platform</label></label>
+        <label class="opt-item"><input type="radio" name="fintech_type" value="robo_advisor"><label>Robo-Advisor</label></label>
+        <label class="opt-item"><input type="radio" name="fintech_type" value="pfm"><label>Personal Finance Management</label></label>
+        <label class="opt-item"><input type="radio" name="fintech_type" value="expense_mgmt"><label>Expense Management</label></label>
+        <label class="opt-item"><input type="radio" name="fintech_type" value="crypto"><label>Cryptocurrency Exchange/Wallet</label></label>
+        <label class="opt-item"><input type="radio" name="fintech_type" value="insurtech"><label>InsurTech Platform</label></label>
+        <label class="opt-item"><input type="radio" name="fintech_type" value="bnpl"><label>Buy Now Pay Later (BNPL)</label></label>
+        <label class="opt-item"><input type="radio" name="fintech_type" value="remittance"><label>Remittance/Money Transfer</label></label>
+        <label class="opt-item"><input type="radio" name="fintech_type" value="credit_scoring"><label>Credit Scoring/Alternative Credit</label></label>
+      </div>
+    </div>
+    <div class="field-group">
+      <div class="subsection-heading">Compliance &amp; Regulatory</div>
+      <div class="option-grid">
+        <label class="opt-item"><input type="checkbox" name="fintech_compliance[]" value="pci_dss"><label>PCI-DSS compliance</label></label>
+        <label class="opt-item"><input type="checkbox" name="fintech_compliance[]" value="gdpr"><label>GDPR compliance</label></label>
+        <label class="opt-item"><input type="checkbox" name="fintech_compliance[]" value="kyc_aml"><label>KYC/AML compliance</label></label>
+        <label class="opt-item"><input type="checkbox" name="fintech_compliance[]" value="soc2"><label>SOC 2 Type II</label></label>
+        <label class="opt-item"><input type="checkbox" name="fintech_compliance[]" value="iso27001"><label>ISO 27001</label></label>
+        <label class="opt-item"><input type="checkbox" name="fintech_compliance[]" value="open_banking"><label>Open Banking (PSD2/UK Open Banking)</label></label>
+        <label class="opt-item"><input type="checkbox" name="fintech_compliance[]" value="fincen"><label>FinCEN (US)</label></label>
+        <label class="opt-item"><input type="checkbox" name="fintech_compliance[]" value="sec_finra"><label>SEC/FINRA regulations</label></label>
+      </div>
+    </div>
+    <div class="field-group">
+      <div class="subsection-heading">Core Financial Features</div>
+      <div class="option-grid">
+        <label class="opt-item"><input type="checkbox" name="fintech_features[]" value="account_mgmt"><label>Account management</label></label>
+        <label class="opt-item"><input type="checkbox" name="fintech_features[]" value="fund_transfer"><label>Fund transfer</label></label>
+        <label class="opt-item"><input type="checkbox" name="fintech_features[]" value="transaction_hist"><label>Transaction history</label></label>
+        <label class="opt-item"><input type="checkbox" name="fintech_features[]" value="multi_currency"><label>Multi-currency support</label></label>
+        <label class="opt-item"><input type="checkbox" name="fintech_features[]" value="kyc_onboarding"><label>KYC digital onboarding</label></label>
+        <label class="opt-item"><input type="checkbox" name="fintech_features[]" value="biometric_auth"><label>Biometric authentication</label></label>
+        <label class="opt-item"><input type="checkbox" name="fintech_features[]" value="fraud_detection"><label>Fraud detection/prevention</label></label>
+        <label class="opt-item"><input type="checkbox" name="fintech_features[]" value="real_time_notif"><label>Real-time transaction notifications</label></label>
+        <label class="opt-item"><input type="checkbox" name="fintech_features[]" value="virtual_cards"><label>Virtual card issuance</label></label>
+        <label class="opt-item"><input type="checkbox" name="fintech_features[]" value="spend_analytics"><label>Spending analytics</label></label>
+        <label class="opt-item"><input type="checkbox" name="fintech_features[]" value="open_banking_api"><label>Open Banking API integration</label></label>
+        <label class="opt-item"><input type="checkbox" name="fintech_features[]" value="crypto_support"><label>Crypto wallet/trading</label></label>
+        <label class="opt-item"><input type="checkbox" name="fintech_features[]" value="investment_tools"><label>Investment portfolio tracking</label></label>
+        <label class="opt-item"><input type="checkbox" name="fintech_features[]" value="loan_mgmt"><label>Loan origination &amp; management</label></label>
+        <label class="opt-item"><input type="checkbox" name="fintech_features[]" value="credit_scoring"><label>Credit scoring</label></label>
+      </div>
+    </div>
+  </div>
+</div>
+
+<!-- ===== SECTION 5: TECHNICAL ===== -->
+<div class="section" id="sec5">
+  <div class="section-header" onclick="toggleSection('sec5')">
+    <div class="section-num">5</div>
+    <div class="section-title-wrap">
+      <div class="section-title">Technical Specifications</div>
+      <div class="section-subtitle">Tech stack, hosting, performance, security &amp; compliance</div>
+    </div>
+    <span class="section-arrow">▾</span>
+  </div>
+  <div class="section-body">
+    <div class="field-group">
+      <div class="subsection-heading">5.1 Technology Preferences</div>
+      <div class="option-grid" style="margin-bottom:12px">
+        <label class="opt-item"><input type="radio" name="tech_pref" value="specific"><label>Yes — specific technologies required</label></label>
+        <label class="opt-item"><input type="radio" name="tech_pref" value="general"><label>Yes — general preferences</label></label>
+        <label class="opt-item"><input type="radio" name="tech_pref" value="open"><label>No — open to recommendations</label></label>
+        <label class="opt-item"><input type="radio" name="tech_pref" value="unsure"><label>Not sure — need consultation</label></label>
+      </div>
+      <div class="two-col">
+        <div><div class="field-label"><span>Frontend</span></div><input type="text" name="tech_frontend" placeholder="e.g. React, Vue, Next.js, Angular…"></div>
+        <div><div class="field-label"><span>Backend</span></div><input type="text" name="tech_backend" placeholder="e.g. Node.js, Laravel, Django, .NET…"></div>
+        <div><div class="field-label"><span>Database</span></div><input type="text" name="tech_db" placeholder="e.g. PostgreSQL, MySQL, MongoDB…"></div>
+        <div><div class="field-label"><span>Other/DevOps</span></div><input type="text" name="tech_other" placeholder="e.g. Redis, Docker, Kubernetes…"></div>
+      </div>
+    </div>
+    <div class="field-group">
+      <div class="subsection-heading">5.2 CMS Platform (if applicable)</div>
+      <div class="option-grid">
+        <label class="opt-item"><input type="radio" name="cms_platform" value="wordpress"><label>WordPress</label></label>
+        <label class="opt-item"><input type="radio" name="cms_platform" value="drupal"><label>Drupal</label></label>
+        <label class="opt-item"><input type="radio" name="cms_platform" value="webflow"><label>Webflow</label></label>
+        <label class="opt-item"><input type="radio" name="cms_platform" value="shopify"><label>Shopify</label></label>
+        <label class="opt-item"><input type="radio" name="cms_platform" value="contentful"><label>Contentful (Headless CMS)</label></label>
+        <label class="opt-item"><input type="radio" name="cms_platform" value="strapi"><label>Strapi (Headless CMS)</label></label>
+        <label class="opt-item"><input type="radio" name="cms_platform" value="custom_cms"><label>Custom CMS</label></label>
+        <label class="opt-item"><input type="radio" name="cms_platform" value="na"><label>Not applicable</label></label>
+      </div>
+    </div>
+    <div class="field-group">
+      <div class="subsection-heading">5.3 Hosting &amp; Infrastructure</div>
+      <div class="field-hint">Hosting preference</div>
+      <div class="option-grid" style="margin-bottom:12px">
+        <label class="opt-item"><input type="radio" name="hosting" value="aws"><label>Cloud — AWS</label></label>
+        <label class="opt-item"><input type="radio" name="hosting" value="gcp"><label>Cloud — Google Cloud</label></label>
+        <label class="opt-item"><input type="radio" name="hosting" value="azure"><label>Cloud — Microsoft Azure</label></label>
+        <label class="opt-item"><input type="radio" name="hosting" value="digitalocean"><label>Cloud — DigitalOcean</label></label>
+        <label class="opt-item"><input type="radio" name="hosting" value="managed"><label>Managed (Heroku, Vercel, Netlify)</label></label>
+        <label class="opt-item"><input type="radio" name="hosting" value="vps"><label>VPS/Dedicated server</label></label>
+        <label class="opt-item"><input type="radio" name="hosting" value="on_premise"><label>On-premise/Own servers</label></label>
+        <label class="opt-item"><input type="radio" name="hosting" value="not_decided"><label>Not decided — need recommendation</label></label>
+        <label class="opt-item"><input type="radio" name="hosting" value="client_provides"><label>Client will provide hosting</label></label>
+      </div>
+      <div class="field-hint">Database preference</div>
+      <div class="option-grid">
+        <label class="opt-item"><input type="radio" name="db_pref" value="mysql"><label>MySQL</label></label>
+        <label class="opt-item"><input type="radio" name="db_pref" value="postgres"><label>PostgreSQL</label></label>
+        <label class="opt-item"><input type="radio" name="db_pref" value="mongodb"><label>MongoDB</label></label>
+        <label class="opt-item"><input type="radio" name="db_pref" value="mssql"><label>SQL Server</label></label>
+        <label class="opt-item"><input type="radio" name="db_pref" value="firebase"><label>Firebase</label></label>
+        <label class="opt-item"><input type="radio" name="db_pref" value="dynamodb"><label>DynamoDB</label></label>
+        <label class="opt-item"><input type="radio" name="db_pref" value="no_pref"><label>No preference</label></label>
+      </div>
+    </div>
+    <div class="field-group">
+      <div class="subsection-heading">5.4 Performance Requirements</div>
+      <div class="option-grid">
+        <label class="opt-item"><input type="checkbox" name="performance[]" value="fast_load"><label>Fast page load (&lt; 2 seconds)</label></label>
+        <label class="opt-item"><input type="checkbox" name="performance[]" value="high_concurrency"><label>High concurrency support</label></label>
+        <label class="opt-item"><input type="checkbox" name="performance[]" value="realtime_updates"><label>Real-time data updates</label></label>
+        <label class="opt-item"><input type="checkbox" name="performance[]" value="offline"><label>Offline functionality</label></label>
+        <label class="opt-item"><input type="checkbox" name="performance[]" value="cdn"><label>CDN (Content Delivery Network)</label></label>
+        <label class="opt-item"><input type="checkbox" name="performance[]" value="caching"><label>Caching implementation</label></label>
+        <label class="opt-item"><input type="checkbox" name="performance[]" value="load_balancing"><label>Load balancing</label></label>
+        <label class="opt-item"><input type="checkbox" name="performance[]" value="auto_scaling"><label>Auto-scaling capability</label></label>
+      </div>
+    </div>
+    <div class="field-group">
+      <div class="subsection-heading">5.5 Security Requirements</div>
+      <div class="option-grid" style="margin-bottom:12px">
+        <label class="opt-item"><input type="checkbox" name="security[]" value="ssl"><label>SSL/HTTPS certificate</label></label>
+        <label class="opt-item"><input type="checkbox" name="security[]" value="encryption"><label>Data encryption (at rest &amp; in transit)</label></label>
+        <label class="opt-item"><input type="checkbox" name="security[]" value="2fa"><label>Two-factor authentication (2FA)</label></label>
+        <label class="opt-item"><input type="checkbox" name="security[]" value="rbac"><label>Role-based access control (RBAC)</label></label>
+        <label class="opt-item"><input type="checkbox" name="security[]" value="audit_logs"><label>Audit logs/activity tracking</label></label>
+        <label class="opt-item"><input type="checkbox" name="security[]" value="pentest"><label>Penetration testing</label></label>
+        <label class="opt-item"><input type="checkbox" name="security[]" value="ddos"><label>DDoS protection</label></label>
+        <label class="opt-item"><input type="checkbox" name="security[]" value="waf"><label>Web Application Firewall (WAF)</label></label>
+      </div>
+      <div class="field-hint">Compliance requirements</div>
+      <div class="option-grid">
+        <label class="opt-item"><input type="checkbox" name="compliance[]" value="gdpr"><label>GDPR</label></label>
+        <label class="opt-item"><input type="checkbox" name="compliance[]" value="hipaa"><label>HIPAA</label></label>
+        <label class="opt-item"><input type="checkbox" name="compliance[]" value="pci_dss"><label>PCI-DSS</label></label>
+        <label class="opt-item"><input type="checkbox" name="compliance[]" value="soc2"><label>SOC 2</label></label>
+        <label class="opt-item"><input type="checkbox" name="compliance[]" value="iso27001"><label>ISO 27001</label></label>
+        <label class="opt-item"><input type="checkbox" name="compliance[]" value="ccpa"><label>CCPA</label></label>
+        <label class="opt-item"><input type="checkbox" name="compliance[]" value="ferpa"><label>FERPA (Education)</label></label>
+        <label class="opt-item"><input type="checkbox" name="compliance[]" value="coppa"><label>COPPA (Children's privacy)</label></label>
+        <label class="opt-item"><input type="checkbox" name="compliance[]" value="wcag"><label>WCAG (Accessibility)</label></label>
+        <label class="opt-item"><input type="checkbox" name="compliance[]" value="none"><label>No specific compliance required</label></label>
+      </div>
+    </div>
+    <div class="field-group">
+      <div class="subsection-heading">5.6 Device &amp; Browser Support</div>
+      <div class="two-col">
+        <div>
+          <div class="field-hint">Devices</div>
+          <div class="option-grid cols-1">
+            <label class="opt-item"><input type="checkbox" name="devices[]" value="desktop"><label>Desktop/Laptop</label></label>
+            <label class="opt-item"><input type="checkbox" name="devices[]" value="tablet_ios"><label>Tablets (iOS)</label></label>
+            <label class="opt-item"><input type="checkbox" name="devices[]" value="tablet_android"><label>Tablets (Android)</label></label>
+            <label class="opt-item"><input type="checkbox" name="devices[]" value="mobile_ios"><label>Mobile phones (iOS)</label></label>
+            <label class="opt-item"><input type="checkbox" name="devices[]" value="mobile_android"><label>Mobile phones (Android)</label></label>
+            <label class="opt-item"><input type="checkbox" name="devices[]" value="all_devices"><label>All devices (responsive)</label></label>
+          </div>
+        </div>
+        <div>
+          <div class="field-hint">Browsers</div>
+          <div class="option-grid cols-1">
+            <label class="opt-item"><input type="checkbox" name="browsers[]" value="chrome"><label>Chrome</label></label>
+            <label class="opt-item"><input type="checkbox" name="browsers[]" value="firefox"><label>Firefox</label></label>
+            <label class="opt-item"><input type="checkbox" name="browsers[]" value="safari"><label>Safari</label></label>
+            <label class="opt-item"><input type="checkbox" name="browsers[]" value="edge"><label>Edge</label></label>
+            <label class="opt-item"><input type="checkbox" name="browsers[]" value="ie11"><label>Internet Explorer 11</label></label>
+            <label class="opt-item"><input type="checkbox" name="browsers[]" value="all_modern"><label>All modern browsers</label></label>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>
+
+<!-- ===== SECTION 6: DESIGN ===== -->
+<div class="section" id="sec6">
+  <div class="section-header" onclick="toggleSection('sec6')">
+    <div class="section-num">6</div>
+    <div class="section-title-wrap">
+      <div class="section-title">Design &amp; User Experience</div>
+      <div class="section-subtitle">Design assets, requirements, and accessibility</div>
+    </div>
+    <span class="section-arrow">▾</span>
+  </div>
+  <div class="section-body">
+    <div class="field-group">
+      <div class="subsection-heading">Design Status</div>
+      <div class="option-grid">
+        <label class="opt-item"><input type="radio" name="design_status" value="complete"><label>Complete designs ready (Figma/Adobe XD)</label></label>
+        <label class="opt-item"><input type="radio" name="design_status" value="wireframes"><label>Wireframes/mockups available</label></label>
+        <label class="opt-item"><input type="radio" name="design_status" value="style_guide"><label>Style guide/design system exists</label></label>
+        <label class="opt-item"><input type="radio" name="design_status" value="brand_only"><label>Brand guidelines only</label></label>
+        <label class="opt-item"><input type="radio" name="design_status" value="reference_sites"><label>Reference websites/apps to follow</label></label>
+        <label class="opt-item"><input type="radio" name="design_status" value="need_design"><label>Need complete UI/UX design</label></label>
+        <label class="opt-item"><input type="radio" name="design_status" value="partial"><label>Partial designs — need completion</label></label>
+      </div>
+      <div class="field-hint" style="margin-top:12px">Design file format</div>
+      <div class="option-grid">
+        <label class="opt-item"><input type="checkbox" name="design_format[]" value="figma"><label>Figma</label></label>
+        <label class="opt-item"><input type="checkbox" name="design_format[]" value="adobe_xd"><label>Adobe XD</label></label>
+        <label class="opt-item"><input type="checkbox" name="design_format[]" value="sketch"><label>Sketch</label></label>
+        <label class="opt-item"><input type="checkbox" name="design_format[]" value="invision"><label>InVision</label></label>
+        <label class="opt-item"><input type="checkbox" name="design_format[]" value="pdf_images"><label>PDF/Images</label></label>
+      </div>
+    </div>
+    <div class="field-group">
+      <div class="subsection-heading">Design Services Needed</div>
+      <div class="option-grid">
+        <label class="opt-item"><input type="checkbox" name="design_services[]" value="logo"><label>Logo design</label></label>
+        <label class="opt-item"><input type="checkbox" name="design_services[]" value="brand_identity"><label>Brand identity</label></label>
+        <label class="opt-item"><input type="checkbox" name="design_services[]" value="ui_ux"><label>UI/UX design</label></label>
+        <label class="opt-item"><input type="checkbox" name="design_services[]" value="wireframing"><label>Wireframing</label></label>
+        <label class="opt-item"><input type="checkbox" name="design_services[]" value="prototyping"><label>Prototyping</label></label>
+        <label class="opt-item"><input type="checkbox" name="design_services[]" value="design_system"><label>Design system creation</label></label>
+        <label class="opt-item"><input type="checkbox" name="design_services[]" value="icon_design"><label>Icon design</label></label>
+        <label class="opt-item"><input type="checkbox" name="design_services[]" value="animation"><label>Animation/motion design</label></label>
+        <label class="opt-item"><input type="checkbox" name="design_services[]" value="not_needed"><label>Not needed — designs provided</label></label>
+      </div>
+    </div>
+    <div class="field-group">
+      <div class="subsection-heading">Accessibility</div>
+      <div class="option-grid">
+        <label class="opt-item"><input type="checkbox" name="accessibility[]" value="wcag_aa"><label>WCAG 2.1 Level AA</label></label>
+        <label class="opt-item"><input type="checkbox" name="accessibility[]" value="wcag_aaa"><label>WCAG 2.1 Level AAA</label></label>
+        <label class="opt-item"><input type="checkbox" name="accessibility[]" value="section_508"><label>Section 508 compliance</label></label>
+        <label class="opt-item"><input type="checkbox" name="accessibility[]" value="keyboard_nav"><label>Keyboard navigation support</label></label>
+        <label class="opt-item"><input type="checkbox" name="accessibility[]" value="screen_reader"><label>Screen reader compatibility</label></label>
+        <label class="opt-item"><input type="checkbox" name="accessibility[]" value="color_contrast"><label>Color contrast compliance</label></label>
+        <label class="opt-item"><input type="checkbox" name="accessibility[]" value="not_required"><label>Not required</label></label>
+      </div>
+    </div>
+  </div>
+</div>
+
+<!-- ===== SECTION 7: CONTENT & DATA ===== -->
+<div class="section" id="sec7">
+  <div class="section-header" onclick="toggleSection('sec7')">
+    <div class="section-num">7</div>
+    <div class="section-title-wrap">
+      <div class="section-title">Content &amp; Data Management</div>
+      <div class="section-subtitle">Content provision and data migration details</div>
+    </div>
+    <span class="section-arrow">▾</span>
+  </div>
+  <div class="section-body">
+    <div class="field-group">
+      <div class="subsection-heading">Content Provision</div>
+      <div class="option-grid" style="margin-bottom:14px">
+        <label class="opt-item"><input type="radio" name="content_provision" value="provide_all"><label>We will provide all content</label></label>
+        <label class="opt-item"><input type="radio" name="content_provision" value="provide_text"><label>We'll provide text, need help with media</label></label>
+        <label class="opt-item"><input type="radio" name="content_provision" value="need_writing"><label>Need content writing services</label></label>
+        <label class="opt-item"><input type="radio" name="content_provision" value="need_full"><label>Need complete content creation</label></label>
+        <label class="opt-item"><input type="radio" name="content_provision" value="combination"><label>Combination — some provided, some needed</label></label>
+      </div>
+      <div class="two-col">
+        <div><div class="field-label"><span>Number of pages/screens</span></div><input type="text" name="page_count" placeholder="Approximate number…"></div>
+        <div><div class="field-label"><span>Number of images needed</span></div><input type="text" name="image_count" placeholder="Approximate number…"></div>
+      </div>
+    </div>
+    <div class="field-group">
+      <div class="subsection-heading">Data Migration</div>
+      <div class="option-grid" style="margin-bottom:12px">
+        <label class="opt-item"><input type="radio" name="migration" value="large_scale"><label>Yes — Large scale migration</label></label>
+        <label class="opt-item"><input type="radio" name="migration" value="small_scale"><label>Yes — Small scale migration</label></label>
+        <label class="opt-item"><input type="radio" name="migration" value="no_migration"><label>No — New system, no existing data</label></label>
+        <label class="opt-item"><input type="radio" name="migration" value="not_sure"><label>Not sure</label></label>
+      </div>
+      <div class="two-col">
+        <div><div class="field-label"><span>Source system</span></div><input type="text" name="migration_source" placeholder="e.g. WordPress, custom database, Shopify…"></div>
+        <div><div class="field-label"><span>Approximate data volume</span></div><input type="text" name="migration_volume" placeholder="e.g. 50,000 products, 10K users…"></div>
+      </div>
+      <div style="margin-top:10px"><input type="text" name="migration_types" placeholder="Data types (users, products, orders, content…)"></div>
+    </div>
+  </div>
+</div>
+
+<!-- ===== SECTION 8: TIMELINE & BUDGET ===== -->
+<div class="section" id="sec8">
+  <div class="section-header" onclick="toggleSection('sec8')">
+    <div class="section-num">8</div>
+    <div class="section-title-wrap">
+      <div class="section-title">Timeline &amp; Budget</div>
+      <div class="section-subtitle">Project duration, deadlines, budget range, engagement model</div>
+    </div>
+    <span class="section-arrow">▾</span>
+  </div>
+  <div class="section-body">
+    <div class="field-group">
+      <div class="subsection-heading">8.1 Timeline</div>
+      <div class="two-col">
+        <div>
+          <div class="field-hint">Expected duration</div>
+          <div class="option-grid cols-1">
+            <label class="opt-item"><input type="radio" name="duration" value="lt1m"><label>Less than 1 month</label></label>
+            <label class="opt-item"><input type="radio" name="duration" value="1_2m"><label>1–2 months</label></label>
+            <label class="opt-item"><input type="radio" name="duration" value="2_3m"><label>2–3 months</label></label>
+            <label class="opt-item"><input type="radio" name="duration" value="3_6m"><label>3–6 months</label></label>
+            <label class="opt-item"><input type="radio" name="duration" value="6_12m"><label>6–12 months</label></label>
+            <label class="opt-item"><input type="radio" name="duration" value="12m_plus"><label>More than 12 months</label></label>
+            <label class="opt-item"><input type="radio" name="duration" value="not_sure"><label>Not sure — need estimate</label></label>
+          </div>
+        </div>
+        <div>
+          <div class="field-hint">Timeline priority</div>
+          <div class="option-grid cols-1">
+            <label class="opt-item"><input type="radio" name="timeline_priority" value="speed"><label>Speed — Launch as soon as possible</label></label>
+            <label class="opt-item"><input type="radio" name="timeline_priority" value="quality"><label>Quality — Take time to do it right</label></label>
+            <label class="opt-item"><input type="radio" name="timeline_priority" value="balance"><label>Balance — Reasonable timeline + good quality</label></label>
+            <label class="opt-item"><input type="radio" name="timeline_priority" value="flexible"><label>Flexible — No rush</label></label>
+          </div>
+        </div>
+      </div>
+      <div style="margin-top:12px"><input type="text" name="deadline_date" placeholder="Target or hard deadline date (if any)…"></div>
+    </div>
+    <div class="field-group">
+      <div class="subsection-heading">8.2 Budget</div>
+      <div class="option-grid" style="margin-bottom:12px">
+        <label class="opt-item"><input type="radio" name="budget" value="lt5k"><label>Under $5,000</label></label>
+        <label class="opt-item"><input type="radio" name="budget" value="5k_10k"><label>$5,000 – $10,000</label></label>
+        <label class="opt-item"><input type="radio" name="budget" value="10k_25k"><label>$10,000 – $25,000</label></label>
+        <label class="opt-item"><input type="radio" name="budget" value="25k_50k"><label>$25,000 – $50,000</label></label>
+        <label class="opt-item"><input type="radio" name="budget" value="50k_100k"><label>$50,000 – $100,000</label></label>
+        <label class="opt-item"><input type="radio" name="budget" value="100k_250k"><label>$100,000 – $250,000</label></label>
+        <label class="opt-item"><input type="radio" name="budget" value="250k_500k"><label>$250,000 – $500,000</label></label>
+        <label class="opt-item"><input type="radio" name="budget" value="500k_plus"><label>$500,000+</label></label>
+        <label class="opt-item"><input type="radio" name="budget" value="not_determined"><label>Not determined yet</label></label>
+        <label class="opt-item"><input type="radio" name="budget" value="need_estimate"><label>Looking for estimate</label></label>
+      </div>
+      <div class="field-hint">Budget flexibility</div>
+      <div class="option-grid">
+        <label class="opt-item"><input type="radio" name="budget_flex" value="fixed"><label>Fixed — Cannot exceed budget</label></label>
+        <label class="opt-item"><input type="radio" name="budget_flex" value="flexible"><label>Flexible — Can adjust for important features</label></label>
+        <label class="opt-item"><input type="radio" name="budget_flex" value="open"><label>Open — Value-driven, not budget-constrained</label></label>
+        <label class="opt-item"><input type="radio" name="budget_flex" value="discuss"><label>Need to discuss</label></label>
+      </div>
+    </div>
+    <div class="field-group">
+      <div class="subsection-heading">8.3 Engagement Model</div>
+      <div class="option-grid" style="margin-bottom:12px">
+        <label class="opt-item"><input type="radio" name="engagement" value="fixed_price"><label>Fixed Price — set cost for defined scope</label></label>
+        <label class="opt-item"><input type="radio" name="engagement" value="time_materials"><label>Time &amp; Materials — pay for actual hours</label></label>
+        <label class="opt-item"><input type="radio" name="engagement" value="dedicated_team"><label>Dedicated Team — monthly retainer</label></label>
+        <label class="opt-item"><input type="radio" name="engagement" value="milestone"><label>Milestone-based — pay per deliverable</label></label>
+        <label class="opt-item"><input type="radio" name="engagement" value="hybrid"><label>Hybrid approach</label></label>
+        <label class="opt-item"><input type="radio" name="engagement" value="not_sure"><label>Not sure — need recommendation</label></label>
+      </div>
+      <div class="field-hint">Payment terms</div>
+      <div class="option-grid">
+        <label class="opt-item"><input type="radio" name="payment_terms" value="50_50"><label>50% upfront, 50% on completion</label></label>
+        <label class="opt-item"><input type="radio" name="payment_terms" value="milestone_based"><label>Milestone-based (% at each phase)</label></label>
+        <label class="opt-item"><input type="radio" name="payment_terms" value="monthly"><label>Monthly payments</label></label>
+        <label class="opt-item"><input type="radio" name="payment_terms" value="25_25_50"><label>25% upfront / 25% mid / 50% completion</label></label>
+        <label class="opt-item"><input type="radio" name="payment_terms" value="flexible"><label>Flexible — open to discussion</label></label>
+      </div>
+    </div>
+  </div>
+</div>
+
+<!-- ===== SECTION 9: TEAM & COMMS ===== -->
+<div class="section" id="sec9">
+  <div class="section-header" onclick="toggleSection('sec9')">
+    <div class="section-num">9</div>
+    <div class="section-title-wrap">
+      <div class="section-title">Team, Communication &amp; Documentation</div>
+      <div class="section-subtitle">Internal resources, communication preferences, docs needed</div>
+    </div>
+    <span class="section-arrow">▾</span>
+  </div>
+  <div class="section-body">
+    <div class="field-group">
+      <div class="subsection-heading">9.1 Your Internal Team</div>
+      <div class="option-grid">
+        <label class="opt-item"><input type="checkbox" name="internal_team[]" value="pm"><label>Project Manager</label></label>
+        <label class="opt-item"><input type="checkbox" name="internal_team[]" value="ba"><label>Product Owner/Business Analyst</label></label>
+        <label class="opt-item"><input type="checkbox" name="internal_team[]" value="designers"><label>Designers (UI/UX)</label></label>
+        <label class="opt-item"><input type="checkbox" name="internal_team[]" value="devs"><label>Developers</label></label>
+        <label class="opt-item"><input type="checkbox" name="internal_team[]" value="qa"><label>QA/Testers</label></label>
+        <label class="opt-item"><input type="checkbox" name="internal_team[]" value="content_writers"><label>Content Writers</label></label>
+        <label class="opt-item"><input type="checkbox" name="internal_team[]" value="marketing"><label>Marketing Team</label></label>
+        <label class="opt-item"><input type="checkbox" name="internal_team[]" value="it_devops"><label>IT/DevOps Team</label></label>
+        <label class="opt-item"><input type="checkbox" name="internal_team[]" value="no_team"><label>No internal team — need full development</label></label>
+      </div>
+      <div class="field-hint" style="margin-top:12px">Your involvement level</div>
+      <div class="option-grid">
+        <label class="opt-item"><input type="radio" name="involvement" value="high"><label>High — Daily involvement and approvals</label></label>
+        <label class="opt-item"><input type="radio" name="involvement" value="moderate"><label>Moderate — Weekly check-ins</label></label>
+        <label class="opt-item"><input type="radio" name="involvement" value="low"><label>Low — Milestone reviews only</label></label>
+        <label class="opt-item"><input type="radio" name="involvement" value="minimal"><label>Minimal — Final approval only</label></label>
+      </div>
+    </div>
+    <div class="field-group">
+      <div class="subsection-heading">9.2 Communication Preferences</div>
+      <div class="option-grid" style="margin-bottom:12px">
+        <label class="opt-item"><input type="checkbox" name="comm_channels[]" value="email"><label>Email</label></label>
+        <label class="opt-item"><input type="checkbox" name="comm_channels[]" value="phone_video"><label>Phone/Video calls</label></label>
+        <label class="opt-item"><input type="checkbox" name="comm_channels[]" value="slack_teams"><label>Slack/Teams</label></label>
+        <label class="opt-item"><input type="checkbox" name="comm_channels[]" value="whatsapp"><label>WhatsApp</label></label>
+        <label class="opt-item"><input type="checkbox" name="comm_channels[]" value="pm_tool"><label>Project tool (Jira, Asana, Trello)</label></label>
+        <label class="opt-item"><input type="checkbox" name="comm_channels[]" value="in_person"><label>In-person meetings</label></label>
+      </div>
+      <div class="field-hint">Meeting frequency</div>
+      <div class="option-grid">
+        <label class="opt-item"><input type="radio" name="meeting_freq" value="daily"><label>Daily standups</label></label>
+        <label class="opt-item"><input type="radio" name="meeting_freq" value="2_3_week"><label>2–3 times per week</label></label>
+        <label class="opt-item"><input type="radio" name="meeting_freq" value="weekly"><label>Weekly</label></label>
+        <label class="opt-item"><input type="radio" name="meeting_freq" value="biweekly"><label>Bi-weekly</label></label>
+        <label class="opt-item"><input type="radio" name="meeting_freq" value="as_needed"><label>As needed</label></label>
+      </div>
+    </div>
+    <div class="field-group">
+      <div class="subsection-heading">9.3 Documentation Needed</div>
+      <div class="option-grid">
+        <label class="opt-item"><input type="checkbox" name="docs[]" value="technical"><label>Technical documentation</label></label>
+        <label class="opt-item"><input type="checkbox" name="docs[]" value="user_manuals"><label>User manuals/guides</label></label>
+        <label class="opt-item"><input type="checkbox" name="docs[]" value="api_docs"><label>API documentation</label></label>
+        <label class="opt-item"><input type="checkbox" name="docs[]" value="admin_docs"><label>Admin documentation</label></label>
+        <label class="opt-item"><input type="checkbox" name="docs[]" value="training_materials"><label>Training materials</label></label>
+        <label class="opt-item"><input type="checkbox" name="docs[]" value="video_tutorials"><label>Video tutorials</label></label>
+        <label class="opt-item"><input type="checkbox" name="docs[]" value="code_docs"><label>Code documentation</label></label>
+        <label class="opt-item"><input type="checkbox" name="docs[]" value="deployment"><label>Deployment guides</label></label>
+        <label class="opt-item"><input type="checkbox" name="docs[]" value="basic_only"><label>Basic documentation only</label></label>
+        <label class="opt-item"><input type="checkbox" name="docs[]" value="not_needed"><label>Not needed</label></label>
+      </div>
+    </div>
+  </div>
+</div>
+
+<!-- ===== SECTION 10: TESTING & DEPLOYMENT ===== -->
+<div class="section" id="sec10">
+  <div class="section-header" onclick="toggleSection('sec10')">
+    <div class="section-num">10</div>
+    <div class="section-title-wrap">
+      <div class="section-title">Testing &amp; Deployment</div>
+      <div class="section-subtitle">Testing types, deployment approach, environments</div>
+    </div>
+    <span class="section-arrow">▾</span>
+  </div>
+  <div class="section-body">
+    <div class="field-group">
+      <div class="subsection-heading">Testing Types</div>
+      <div class="option-grid">
+        <label class="opt-item"><input type="checkbox" name="testing[]" value="unit"><label>Unit testing</label></label>
+        <label class="opt-item"><input type="checkbox" name="testing[]" value="integration"><label>Integration testing</label></label>
+        <label class="opt-item"><input type="checkbox" name="testing[]" value="system"><label>System testing</label></label>
+        <label class="opt-item"><input type="checkbox" name="testing[]" value="uat"><label>User Acceptance Testing (UAT)</label></label>
+        <label class="opt-item"><input type="checkbox" name="testing[]" value="performance"><label>Performance testing</label></label>
+        <label class="opt-item"><input type="checkbox" name="testing[]" value="security"><label>Security testing</label></label>
+        <label class="opt-item"><input type="checkbox" name="testing[]" value="browser_compat"><label>Browser compatibility testing</label></label>
+        <label class="opt-item"><input type="checkbox" name="testing[]" value="mobile_device"><label>Mobile device testing</label></label>
+        <label class="opt-item"><input type="checkbox" name="testing[]" value="accessibility_test"><label>Accessibility testing</label></label>
+        <label class="opt-item"><input type="checkbox" name="testing[]" value="load"><label>Load testing</label></label>
+        <label class="opt-item"><input type="checkbox" name="testing[]" value="standard"><label>Standard testing practices</label></label>
+      </div>
+      <div class="field-hint" style="margin-top:12px">Who will perform UAT?</div>
+      <div class="option-grid">
+        <label class="opt-item"><input type="radio" name="uat_who" value="your_team"><label>Your team will handle UAT</label></label>
+        <label class="opt-item"><input type="radio" name="uat_who" value="vendor"><label>Need UAT support from vendor</label></label>
+        <label class="opt-item"><input type="radio" name="uat_who" value="combined"><label>Combined effort</label></label>
+        <label class="opt-item"><input type="radio" name="uat_who" value="not_sure"><label>Not sure</label></label>
+      </div>
+    </div>
+    <div class="field-group">
+      <div class="subsection-heading">Deployment &amp; Environments</div>
+      <div class="field-hint">Deployment approach</div>
+      <div class="option-grid" style="margin-bottom:12px">
+        <label class="opt-item"><input type="radio" name="deployment" value="full"><label>Full deployment at once</label></label>
+        <label class="opt-item"><input type="radio" name="deployment" value="phased"><label>Phased rollout</label></label>
+        <label class="opt-item"><input type="radio" name="deployment" value="pilot"><label>Pilot/beta launch first</label></label>
+        <label class="opt-item"><input type="radio" name="deployment" value="soft_then_full"><label>Soft launch then full launch</label></label>
+        <label class="opt-item"><input type="radio" name="deployment" value="recommend"><label>Need recommendation</label></label>
+      </div>
+      <div class="field-hint">Who will handle deployment?</div>
+      <div class="option-grid" style="margin-bottom:12px">
+        <label class="opt-item"><input type="radio" name="deploy_who" value="vendor"><label>Development team (vendor)</label></label>
+        <label class="opt-item"><input type="radio" name="deploy_who" value="your_it"><label>Your IT team</label></label>
+        <label class="opt-item"><input type="radio" name="deploy_who" value="shared"><label>Shared responsibility</label></label>
+      </div>
+      <div class="field-hint">Environments needed</div>
+      <div class="option-grid">
+        <label class="opt-item"><input type="checkbox" name="environments[]" value="dev"><label>Development</label></label>
+        <label class="opt-item"><input type="checkbox" name="environments[]" value="staging"><label>Staging/Testing</label></label>
+        <label class="opt-item"><input type="checkbox" name="environments[]" value="uat_env"><label>UAT</label></label>
+        <label class="opt-item"><input type="checkbox" name="environments[]" value="production"><label>Production</label></label>
+        <label class="opt-item"><input type="checkbox" name="environments[]" value="demo"><label>Demo</label></label>
+      </div>
+    </div>
+  </div>
+</div>
+
+<!-- ===== SECTION 11: POST-LAUNCH ===== -->
+<div class="section" id="sec11">
+  <div class="section-header" onclick="toggleSection('sec11')">
+    <div class="section-num">11</div>
+    <div class="section-title-wrap">
+      <div class="section-title">Post-Launch Support &amp; Handover</div>
+      <div class="section-subtitle">Support level, training, and project handover</div>
+    </div>
+    <span class="section-arrow">▾</span>
+  </div>
+  <div class="section-body">
+    <div class="field-group">
+      <div class="subsection-heading">Support &amp; Maintenance</div>
+      <div class="option-grid" style="margin-bottom:12px">
+        <label class="opt-item"><input type="radio" name="post_launch_support" value="monthly_contract"><label>Yes — Monthly maintenance contract</label></label>
+        <label class="opt-item"><input type="radio" name="post_launch_support" value="on_demand"><label>Yes — On-demand/as-needed</label></label>
+        <label class="opt-item"><input type="radio" name="post_launch_support" value="warranty_only"><label>Yes — Limited warranty period only</label></label>
+        <label class="opt-item"><input type="radio" name="post_launch_support" value="internal"><label>No — Will handle internally</label></label>
+        <label class="opt-item"><input type="radio" name="post_launch_support" value="not_decided"><label>Not decided yet</label></label>
+      </div>
+      <div class="field-hint">Support level needed</div>
+      <div class="option-grid">
+        <label class="opt-item"><input type="checkbox" name="support_level[]" value="bug_fixes"><label>Bug fixes</label></label>
+        <label class="opt-item"><input type="checkbox" name="support_level[]" value="security_updates"><label>Security updates</label></label>
+        <label class="opt-item"><input type="checkbox" name="support_level[]" value="performance_opt"><label>Performance optimization</label></label>
+        <label class="opt-item"><input type="checkbox" name="support_level[]" value="feature_enhancements"><label>Feature enhancements</label></label>
+        <label class="opt-item"><input type="checkbox" name="support_level[]" value="content_updates"><label>Content updates</label></label>
+        <label class="opt-item"><input type="checkbox" name="support_level[]" value="server_mgmt"><label>Server maintenance</label></label>
+        <label class="opt-item"><input type="checkbox" name="support_level[]" value="monitoring"><label>Monitoring &amp; alerts</label></label>
+        <label class="opt-item"><input type="checkbox" name="support_level[]" value="backup"><label>Backup &amp; disaster recovery</label></label>
+        <label class="opt-item"><input type="checkbox" name="support_level[]" value="247_support"><label>24/7 support</label></label>
+      </div>
+    </div>
+    <div class="field-group">
+      <div class="subsection-heading">Training</div>
+      <div class="option-grid">
+        <label class="opt-item"><input type="checkbox" name="training[]" value="admin_training"><label>Admin panel training</label></label>
+        <label class="opt-item"><input type="checkbox" name="training[]" value="end_user_training"><label>End user training</label></label>
+        <label class="opt-item"><input type="checkbox" name="training[]" value="content_training"><label>Content management training</label></label>
+        <label class="opt-item"><input type="checkbox" name="training[]" value="tech_training"><label>Technical training (for IT team)</label></label>
+        <label class="opt-item"><input type="checkbox" name="training[]" value="video_tuts"><label>Video tutorials</label></label>
+        <label class="opt-item"><input type="checkbox" name="training[]" value="live_sessions"><label>Live training sessions</label></label>
+        <label class="opt-item"><input type="checkbox" name="training[]" value="docs_only"><label>Documentation only</label></label>
+        <label class="opt-item"><input type="checkbox" name="training[]" value="no_training"><label>Not needed</label></label>
+      </div>
+    </div>
+    <div class="field-group">
+      <div class="subsection-heading">Handover Requirements</div>
+      <div class="option-grid">
+        <label class="opt-item"><input type="checkbox" name="handover[]" value="source_code"><label>Source code</label></label>
+        <label class="opt-item"><input type="checkbox" name="handover[]" value="db_credentials"><label>Database credentials</label></label>
+        <label class="opt-item"><input type="checkbox" name="handover[]" value="server_access"><label>Server access</label></label>
+        <label class="opt-item"><input type="checkbox" name="handover[]" value="api_credentials"><label>Third-party API credentials</label></label>
+        <label class="opt-item"><input type="checkbox" name="handover[]" value="documentation"><label>Documentation</label></label>
+        <label class="opt-item"><input type="checkbox" name="handover[]" value="design_files"><label>Design files</label></label>
+        <label class="opt-item"><input type="checkbox" name="handover[]" value="knowledge_transfer"><label>Knowledge transfer sessions</label></label>
+        <label class="opt-item"><input type="checkbox" name="handover[]" value="full_ownership"><label>Complete ownership transfer</label></label>
+      </div>
+    </div>
+  </div>
+</div>
+
+<!-- ===== SECTION 12: ADDITIONAL ===== -->
+<div class="section" id="sec12">
+  <div class="section-header" onclick="toggleSection('sec12')">
+    <div class="section-num">12</div>
+    <div class="section-title-wrap">
+      <div class="section-title">Additional Information</div>
+      <div class="section-subtitle">References, challenges, success criteria</div>
+    </div>
+    <span class="section-arrow">▾</span>
+  </div>
+  <div class="section-body">
+    <div class="field-group">
+      <div class="field-label"><span>Existing website/system URL</span></div>
+      <input type="text" name="existing_url" placeholder="https://…">
+    </div>
+    <div class="field-group">
+      <div class="field-label"><span>Competitor or reference websites/apps</span></div>
+      <div class="field-hint">Sites you like or want similar functionality</div>
+      <input type="text" name="reference_1" placeholder="Reference site 1 (URL or description)" style="margin-bottom:8px">
+      <input type="text" name="reference_2" placeholder="Reference site 2 (URL or description)" style="margin-bottom:8px">
+      <input type="text" name="reference_3" placeholder="Reference site 3 (URL or description)">
+    </div>
+    <div class="field-group">
+      <div class="field-label"><span>What makes this project unique or challenging?</span></div>
+      <textarea name="unique_challenges" placeholder="Describe any unique aspects, technical challenges, or complexity…"></textarea>
+    </div>
+    <div class="field-group">
+      <div class="field-label"><span>Any specific concerns or risks?</span></div>
+      <textarea name="concerns_risks" placeholder="Technical risks, timeline concerns, integration complexity…"></textarea>
+    </div>
+    <div class="field-group">
+      <div class="field-label"><span>Success criteria — what does success look like?</span></div>
+      <textarea name="success_criteria" placeholder="How will you measure if this project is successful? (metrics, goals, KPIs…)"></textarea>
+    </div>
+    <div class="field-group">
+      <div class="field-label"><span>Any additional requirements or information?</span></div>
+      <textarea name="additional_info" placeholder="Anything else you'd like us to know…"></textarea>
+    </div>
+  </div>
+</div>
+
+<!-- ===== SUBMIT ===== -->
+<div class="submit-area">
+  <p class="submit-info">Please review all sections before submitting. Our team will review your requirements and get back to you within 1–2 business days.</p>
+  <button type="submit" class="btn-submit">Submit Project Requirements →</button>
+</div>
+
+</form>
+</div>
+
+<script>
+// ===== ACCORDION =====
+function toggleSection(id) {
+  const sec = document.getElementById(id);
+  sec.classList.toggle('open');
+}
+
+// ===== INDUSTRY SHOW/HIDE =====
+function handleIndustryChange(value) {
+  const industryMap = {
+    'ecommerce': 'sec-ecommerce',
+    'healthcare': 'sec-healthcare',
+    'education': 'sec-education',
+    'proptech': 'sec-proptech',
+    'fintech': 'sec-fintech'
+  };
+
+  // Hide all industry sections
+  document.querySelectorAll('.industry-section').forEach(el => {
+    el.classList.remove('visible', 'open');
+  });
+
+  // Show relevant one
+  if (industryMap[value]) {
+    const target = document.getElementById(industryMap[value]);
+    if (target) {
+      target.classList.add('visible', 'open');
+      target.scrollIntoView({ behavior: 'smooth', block: 'nearest' });
+    }
+  }
+
+  updateProgress();
+}
+
+// ===== PROGRESS BAR =====
+function updateProgress() {
+  const allInputs = document.querySelectorAll('input[type="radio"]:checked, input[type="checkbox"]:checked');
+  const allTextInputs = document.querySelectorAll('input[type="text"], textarea, select');
+  let filled = allInputs.length;
+  allTextInputs.forEach(el => { if (el.value.trim()) filled++; });
+
+  // simple heuristic: 60 total "units" for 100%
+  const pct = Math.min(100, Math.round((filled / 60) * 100));
+  document.getElementById('progressFill').style.width = pct + '%';
+  document.getElementById('progressLabel').textContent = pct + '% complete';
+}
+
+document.querySelectorAll('input, select, textarea').forEach(el => {
+  el.addEventListener('change', updateProgress);
+  el.addEventListener('input', updateProgress);
+});
+
+// ===== OPEN FIRST SECTION =====
+document.getElementById('sec1').classList.add('open');
+</script>
+</body>
+</html>
