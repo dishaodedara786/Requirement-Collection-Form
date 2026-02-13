@@ -12,7 +12,7 @@ app.post("/submit", async (req, res) => {
 
   try {
     await axios.post(
-      "https://n8n.srv875884.hstgr.cloud/webhook-test/n8n-form",
+      process.env.WEB_HOOK_URL,
       formData,
       {
         headers: {
@@ -27,6 +27,8 @@ app.post("/submit", async (req, res) => {
     res.status(500).send("Webhook failed");
   }
 });
+
+const port = process.env.PORT || 5000;
 
 app.listen(5000, () => {
   console.log("Server running on http://localhost:5000");
