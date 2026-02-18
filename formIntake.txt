@@ -1,0 +1,100 @@
+🔹 A. Basic Information
+
+Project Name
+
+Industry
+
+Project Type (SaaS / Marketplace / CRM / ERP / E-commerce / Custom)
+
+Objective (Short description)
+
+🔹 B. Platform Scope
+
+Web App (Yes/No)
+
+Mobile App (None / iOS / Android / Both)
+
+Admin Panel (Yes/No)
+
+API-only project? (Yes/No)
+
+🔹 C. User & Roles
+
+User roles (list)
+
+Estimated total users
+
+Estimated concurrent users
+
+Role-based permissions required? (Yes/No)
+
+🔹 D. Functional Scope
+
+Number of CRUD modules
+
+Custom workflows? (Describe)
+
+Approval flows? (Yes/No)
+
+Notifications? (Email/SMS/Push)
+
+Dashboard complexity (Basic / Medium / Advanced BI)
+
+Reporting export (PDF/Excel/CSV?)
+
+🔹 E. Integrations
+
+Payment gateway?
+
+Third-party APIs?
+
+CRM/ERP?
+
+AI features?
+
+Chat system?
+
+External authentication (Google, SSO, etc.)?
+
+🔹 F. Technical Complexity
+
+Multi-language?
+
+Multi-tenant?
+
+Real-time features?
+
+File uploads?
+
+Large database expected?
+
+Data migration?
+
+🔹 G. Non-Functional Requirements
+
+Security level
+
+Compliance requirements
+
+Performance SLA
+
+Hosting preference (AWS/Azure/etc.)
+
+🔹 H. Team Configuration
+Seniors
+Mid-level
+Junior
+
+QA dedicated?
+
+PM dedicated?
+
+🔹 I. Commercial Inputs
+
+Hourly rate
+
+Fixed budget?
+
+Target delivery timeline?
+
+Payment preference (Milestone / Monthly)

@@ -1,3 +1,4 @@
+
 import express from "express";
 import axios from "axios";
 
@@ -9,10 +10,11 @@ app.use(express.static("public"));
 
 app.post("/submit", async (req, res) => {
   const formData = req.body;
+  console.log(req.body);
 
   try {
     await axios.post(
-      process.env.WEB_HOOK_URL,
+      "https://n8n.srv875884.hstgr.cloud/webhook-test/n8n-form",
       formData,
       {
         headers: {
@@ -30,6 +32,6 @@ app.post("/submit", async (req, res) => {
 
 const port = process.env.PORT || 5000;
 
-app.listen(5000, () => {
+app.listen(port, () => {
   console.log("Server running on http://localhost:5000");
 });

@@ -1,0 +1,515 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Project Estimation Intake Form</title>
+<style>
+    body {
+        font-family: Arial, sans-serif;
+        margin: 40px;
+        background-color: #f5f7fa;
+    }
+    h2 {
+        background-color: #1f3c88;
+        color: white;
+        padding: 10px;
+    }
+    .section {
+        background: white;
+        padding: 20px;
+        margin-bottom: 20px;
+        border-radius: 8px;
+        box-shadow: 0 2px 6px rgba(0,0,0,0.05);
+    }
+    label {
+        font-weight: bold;
+        display: block;
+        margin-top: 15px;
+    }
+    input, select, textarea {
+        width: 100%;
+        padding: 8px;
+        margin-top: 5px;
+        border-radius: 4px;
+        border: 1px solid #ccc;
+    }
+    .inline {
+        width: auto;
+        margin-right: 10px;
+    }
+    .checkbox-group, .radio-group {
+        margin-top: 8px;
+    }
+    .checkbox-group label,
+    .radio-group label {
+        font-weight: normal;
+        display: block;
+    }
+    button {
+        margin-top: 30px;
+        padding: 12px 20px;
+        background-color: #1f3c88;
+        color: white;
+        border: none;
+        border-radius: 6px;
+        font-size: 16px;
+        cursor: pointer;
+    }
+</style>
+</head>
+<body>
+
+<h1>Software Project Estimation Intake Form</h1>
+
+<form action="/submit" method="POST" enctype="multipart/form-data">
+
+<!-- SECTION 1 -->
+<div class="section">
+<h2>1. Project Basics</h2>
+
+<label>Project Name *</label>
+<input type="text" name="project_name" required>
+
+<label>Sow</label>
+<input type="file" name="sow_document" accept=".pdf,.doc,.docx" required>
+
+<label>Project Type</label>
+<select name="project_type">
+<option>Corporate Website</option>
+<option>Marketplace</option>
+<option>CRM Integrated Portal</option>
+<option>SaaS Product</option>
+<option>E-commerce</option>
+<option>Internal System</option>
+<option>Other</option>
+</select>
+
+<label>Estimation Purpose</label>
+<select name="estimation_purpose">
+<option>Internal Planning</option>
+<option>Client Proposal (Budgetary)</option>
+<option>Fixed-Bid Proposal</option>
+<option>Time & Material Proposal</option>
+<option>Ballpark ROM</option>
+</select>
+
+<label>Estimation Confidence Level</label>
+<select name="confidence_level">
+<option>High Accuracy (Conservative)</option>
+<option>Balanced</option>
+<option>Aggressive (Optimized)</option>
+</select>
+</div>
+
+<!-- SECTION 2 -->
+<div class="section">
+<h2>2. Technology Stack</h2>
+
+<label>Frontend Technology</label>
+<select name="frontend">
+<option>React</option>
+<option>Next.js</option>
+<option>Vue</option>
+<option>Angular</option>
+<option>WordPress Theme</option>
+<option>Blade (Laravel)</option>
+<option>Not Decided</option>
+<option>Other</option>
+</select>
+
+<label>Backend Technology</label>
+<select name="backend">
+<option>Node.js</option>
+<option>Laravel</option>
+<option>.NET</option>
+<option>WordPress</option>
+<option>Headless CMS</option>
+<option>Salesforce Experience Cloud</option>
+<option>Not Decided</option>
+<option>Other</option>
+</select>
+
+<label>Database</label>
+<select name="database">
+<option>MySQL</option>
+<option>PostgreSQL</option>
+<option>MongoDB</option>
+<option>Salesforce Managed</option>
+<option>Not Applicable</option>
+<option>Not Decided</option>
+</select>
+
+<label>Hosting Environment</label>
+<select name="hosting">
+<option>AWS</option>
+<option>Azure</option>
+<option>GCP</option>
+<option>Shared Hosting</option>
+<option>Client Managed</option>
+<option>Not Decided</option>
+</select>
+</div>
+
+<!-- SECTION 3 -->
+<div class="section">
+<h2>3. UI / UX Scope</h2>
+
+<label>Is UI/UX Design Included?</label>
+<select name="ui_scope">
+<option>Design Provided by Client</option>
+<option>UI/UX to be Designed by Us</option>
+<option>Template-Based</option>
+<option>Minor Revamp Only</option>
+</select>
+
+<label>Number of Unique Page Templates</label>
+<input type="number" name="page_templates">
+
+<label>Design Complexity</label>
+<select name="design_complexity">
+<option>Basic</option>
+<option>Moderate</option>
+<option>High</option>
+<option>Premium</option>
+</select>
+
+<label>Mobile-First Required?</label>
+<select name="mobile_first">
+<option>Yes</option>
+<option>No</option>
+</select>
+
+<label>Accessibility Compliance</label>
+<select name="accessibility">
+<option>None</option>
+<option>WCAG A</option>
+<option>WCAG AA</option>
+<option>WCAG AAA</option>
+</select>
+</div>
+
+<!-- SECTION 4 -->
+<div class="section">
+<h2>4. Data & Volume</h2>
+
+<label>Approx. Number of Equipment Records</label>
+<select name="equipment_records">
+<option>< 100</option>
+<option>100–1,000</option>
+<option>1,000–10,000</option>
+<option>10,000+</option>
+</select>
+
+<label>Average Images Per Record</label>
+<input type="number" name="images_per_record">
+
+<label>Video Hosting</label>
+<select name="video_hosting">
+<option>YouTube/Vimeo</option>
+<option>Self-hosted</option>
+<option>CRM-driven</option>
+<option>Not Applicable</option>
+</select>
+
+<label>Expected Monthly Traffic</label>
+<select name="traffic">
+<option>< 5,000</option>
+<option>5,000–20,000</option>
+<option>20,000–100,000</option>
+<option>100,000+</option>
+</select>
+</div>
+
+<!-- SECTION 5 -->
+<div class="section">
+<h2>5. API & Integrations</h2>
+
+<label>Salesforce API Status</label>
+<select name="salesforce_api">
+<option>APIs Ready & Documented</option>
+<option>Limited Documentation</option>
+<option>APIs Not Built Yet</option>
+<option>Unclear</option>
+</select>
+
+<label>Sandbox Available?</label>
+<select name="sandbox">
+<option>Yes</option>
+<option>No</option>
+</select>
+
+<label>Sync Requirement</label>
+<select name="sync_type">
+<option>Real-time</option>
+<option>Scheduled</option>
+<option>Manual</option>
+<option>Not Defined</option>
+</select>
+
+<label>Third-Party Integrations</label>
+<div class="checkbox-group">
+<label><input type="checkbox" name="integrations" value="Salesforce CRM"> Salesforce CRM</label>
+<label><input type="checkbox" name="integrations" value="Salesforce Omnichannel"> Salesforce Omnichannel</label>
+<label><input type="checkbox" name="integrations" value="Approve Payments"> Approve Payments</label>
+<label><input type="checkbox" name="integrations" value="Newsletter Tool"> Newsletter Tool</label>
+<label><input type="checkbox" name="integrations" value="GTranslate"> GTranslate</label>
+<label><input type="checkbox" name="integrations" value="Social Sharing"> Social Sharing</label>
+<label><input type="checkbox" name="integrations" value="Analytics"> Analytics</label>
+</div>
+</div>
+
+<!-- SECTION 6 -->
+<div class="section">
+<h2>6. User & Role Complexity</h2>
+
+<label>Number of User Roles</label>
+<input type="number" name="user_roles">
+
+<label>Authentication Type</label>
+<select name="auth_type">
+<option>Email & Password</option>
+<option>Social Login</option>
+<option>SSO</option>
+<option>MFA Required</option>
+</select>
+
+<label>Internal Chat Required?</label>
+<select name="chat_required">
+<option>No</option>
+<option>Basic Messaging</option>
+<option>Real-time Chat</option>
+<option>Salesforce Integrated Chat</option>
+</select>
+
+<label>Role-Based Dashboards?</label>
+<select name="role_dashboard">
+<option>Yes</option>
+<option>No</option>
+</select>
+</div>
+
+<!-- SECTION 7 -->
+<div class="section">
+<h2>7. Admin & CMS</h2>
+
+<label>Custom Admin Panel Required?</label>
+<select name="custom_admin">
+<option>Yes</option>
+<option>No</option>
+</select>
+
+<label>CMS Level</label>
+<select name="cms_level">
+<option>Basic Page Management</option>
+<option>Dynamic Modules</option>
+<option>Advanced Workflow & Versioning</option>
+</select>
+
+<label>Reporting Required?</label>
+<select name="reporting">
+<option>Yes</option>
+<option>No</option>
+</select>
+</div>
+
+<!-- SECTION 8 -->
+<div class="section">
+<h2>8. QA & Testing</h2>
+
+<label>Testing Level</label>
+<select name="testing_level">
+<option>Basic Functional</option>
+<option>Full Regression</option>
+<option>Automated Testing</option>
+<option>Performance & Load Testing</option>
+</select>
+
+<label>UAT Cycles</label>
+<select name="uat_cycles">
+<option>1</option>
+<option>2</option>
+<option>3+</option>
+<option>Not Defined</option>
+</select>
+</div>
+
+<!-- SECTION 9 -->
+<div class="section">
+<h2>9. DevOps & Deployment</h2>
+
+<label>Environments Required</label>
+<div class="checkbox-group">
+<label><input type="checkbox" name="env" value="Development"> Development</label>
+<label><input type="checkbox" name="env" value="Staging"> Staging</label>
+<label><input type="checkbox" name="env" value="UAT"> UAT</label>
+<label><input type="checkbox" name="env" value="Production"> Production</label>
+</div>
+
+<label>CI/CD Setup Required?</label>
+<select name="cicd">
+<option>Yes</option>
+<option>No</option>
+</select>
+
+<label>Backup & Monitoring Required?</label>
+<select name="backup_monitoring">
+<option>Yes</option>
+<option>No</option>
+</select>
+</div>
+
+<!-- SECTION 10 -->
+<div class="section">
+<h2>10. Timeline & Commercial</h2>
+
+<label>Target Launch Date</label>
+<input type="date" name="launch_date">
+
+<label>Billing Model</label>
+<select name="billing_model">
+<option>Fixed Cost</option>
+<option>Time & Material</option>
+<option>Milestone Based</option>
+</select>
+
+<label>Contingency Buffer (%)</label>
+<input type="number" name="contingency" value="15">
+
+<label>Additional Notes</label>
+<textarea name="notes" rows="4"></textarea>
+</div>
+
+<!-- SECTION: Team Composition & Resource Planning -->
+<div class="section">
+<h2>11. Team Composition & Resource Planning</h2>
+
+<label>Team Model Type</label>
+<select name="team_model" required>
+<option value="">Select Team Model</option>
+<option>Dedicated Team</option>
+<option>Fixed Team (Pre-defined)</option>
+<option>Flexible Resource Pool</option>
+<option>Not Decided</option>
+</select>
+
+<hr>
+
+<h3>Backend Team</h3>
+
+<label>Number of Backend Developers</label>
+<input type="number" name="backend_count" min="0" value="1">
+
+<label>Backend Seniority</label>
+<select name="backend_seniority">
+<option>Junior (0–2 yrs)</option>
+<option>Mid (3–6 yrs)</option>
+<option>Senior (7+ yrs)</option>
+</select>
+
+<label>Backend Weekly Allocation (%)</label>
+<input type="number" name="backend_allocation" min="0" max="100" value="100">
+
+<hr>
+
+<h3>Frontend Team</h3>
+
+<label>Number of Frontend Developers</label>
+<input type="number" name="frontend_count" min="0" value="1">
+
+<label>Frontend Seniority</label>
+<select name="frontend_seniority">
+<option>Junior (0–2 yrs)</option>
+<option>Mid (3–6 yrs)</option>
+<option>Senior (7+ yrs)</option>
+</select>
+
+<label>Frontend Weekly Allocation (%)</label>
+<input type="number" name="frontend_allocation" min="0" max="100" value="100">
+
+<hr>
+
+<h3>QA Team</h3>
+
+<label>Number of QA Engineers</label>
+<input type="number" name="qa_count" min="0" value="1">
+
+<label>QA Seniority</label>
+<select name="qa_seniority">
+<option>Junior (0–2 yrs)</option>
+<option>Mid (3–6 yrs)</option>
+<option>Senior (7+ yrs)</option>
+</select>
+
+<label>QA Weekly Allocation (%)</label>
+<input type="number" name="qa_allocation" min="0" max="100" value="100">
+
+<hr>
+
+<h3>Optional Roles</h3>
+
+<label>DevOps Engineer Required?</label>
+<select name="devops_required">
+<option>No</option>
+<option>Yes</option>
+</select>
+
+<label>DevOps Seniority</label>
+<select name="devops_seniority">
+<option>Junior (0–2 yrs)</option>
+<option>Mid (3–6 yrs)</option>
+<option>Senior (7+ yrs)</option>
+</select>
+
+<label>DevOps Weekly Allocation (%)</label>
+<input type="number" name="devops_allocation" min="0" max="100" value="0">
+
+<hr>
+
+<label>UI/UX Designer Required?</label>
+<select name="designer_required">
+<option>No</option>
+<option>Yes</option>
+</select>
+
+<label>Designer Seniority</label>
+<select name="designer_seniority">
+<option>Junior (0–2 yrs)</option>
+<option>Mid (3–6 yrs)</option>
+<option>Senior (7+ yrs)</option>
+</select>
+
+<label>Designer Weekly Allocation (%)</label>
+<input type="number" name="designer_allocation" min="0" max="100" value="0">
+
+<hr>
+
+<label>Project Manager Required?</label>
+<select name="pm_required">
+<option>No</option>
+<option>Yes</option>
+</select>
+
+<label>Project Manager Weekly Allocation (%)</label>
+<input type="number" name="pm_allocation" min="0" max="100" value="0">
+
+<hr>
+
+<label>Working Days Per Week</label>
+<select name="working_days">
+<option>5</option>
+<option>6</option>
+<option>Custom</option>
+</select>
+
+<label>Working Hours Per Day</label>
+<input type="number" name="hours_per_day" min="1" max="12" value="8">
+
+</div>
+
+<button type="submit">Submit Estimation Request</button>
+
+</form>
+
+</body>
+</html>
